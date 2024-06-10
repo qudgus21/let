@@ -9,13 +9,14 @@ const App = () => {
       <div className="h-[138px]"></div>
       <div className="w-fit flex">
         <Sidebar />
-        <div className="w-full h-full w-[1700px]">
+        <div className="w-full h-full w-[1757px]">
           <div className="font-bold text-[50px] mb-[10px]">
             Participant’s Baseline in Alzheimer’s Disease
           </div>
           <div className="font-bold text-[30px]">
             Study ID : CPAD | Patient ID : 9QW2U
           </div>
+          <div className="h-[107px] pl-[553px]">123</div>
         </div>
       </div>
     </div>
