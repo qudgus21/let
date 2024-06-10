@@ -75,7 +75,7 @@ const App = () => {
   });
 
   return (
-    <div className="bg-black w-max h-full text-white">
+    <div className="bg-black w-auto h-full text-white">
       <Gnb />
       <div className="h-[138px]"></div>
       <div className="w-fit flex gap-[83px]">
