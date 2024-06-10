@@ -1,31 +1,25 @@
-import React, { useState } from 'react';
-import Item from './components/item';
+import React from "react";
+import Gnb from "./components/gnb";
+import Sidebar from "./components/sideBar";
 
 const App = () => {
-
-  const [arr, setArr] = useState([]);
-
-  const clickBtn = () => {
-    let newArr = [...arr];
-    newArr.push(1);
-    setArr(newArr);
-
-    console.log(arr)
-  }
-
   return (
-    <div>
-      <div className='text-[100px] border border-solid' onClick={()=> {clickBtn()}}>
-        <div>자식추가하기</div>
+    <div className="bg-black w-fit h-full text-white">
+      <Gnb />
+      <div className="h-[138px]"></div>
+      <div className="w-fit flex">
+        <Sidebar />
+        <div className="w-full h-full w-[1700px]">
+          <div className="font-bold text-[50px] mb-[10px]">
+            Participant’s Baseline in Alzheimer’s Disease
+          </div>
+          <div className="font-bold text-[30px]">
+            Study ID : CPAD | Patient ID : 9QW2U
+          </div>
+        </div>
       </div>
-      {
-        arr.map((item, index) => {
-            return <div key={index}><Item/></div>
-        })
-      }
-   
     </div>
-  )
+  );
 };
 
 export default App;
