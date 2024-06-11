@@ -75,7 +75,7 @@ const Sidebar = () => {
         <div className="bg-[#2f1a7a] !w-[457px] !h-full rounded-tr-[16px] rounded-br-[16px]"></div>
         <img
           src={side}
-          className="cursor-pointer absolute bottom-0"
+          className="cursor-pointer absolute bottom-0 ml-[22px]"
           alt="icon"
         />
       </div>
