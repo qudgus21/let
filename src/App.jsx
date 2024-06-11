@@ -15,7 +15,7 @@ const App = () => {
       "1.4±1.2",
       "1.4±1.1",
       "1.4±1.0",
-      "1.3± 0.9 ",
+      "1.3± 0.9",
     ],
     "ADAS Commands": [
       "",
@@ -74,8 +74,146 @@ const App = () => {
     ],
   });
 
+  const [b, setB] = useState({
+    "ADAS Naming": [
+      "",
+      "0.1±0.2",
+      "1.0±1.2",
+      "0.2±0.3",
+      "0.3±0.5",
+      "0.6±0.8",
+      "1.0±1.3",
+      "0.5±0.6",
+      "10.3±0.5",
+    ],
+    "ADAS Orientation": [
+      "",
+      "1.0±0.5",
+      "0.6±0.6",
+      "0.8±0.5",
+      "0.6±0.5",
+      "0.5±0.6",
+      "0.6±0.8",
+      "0.8±0.6",
+      "0.8±0.5",
+    ],
+    "ADAS Remember Instructions": [
+      "",
+      "3.0±1.2",
+      "3.3±1.5",
+      "3.2±1.5",
+      "3.1±1.6",
+      "3.2±1.7",
+      "3.4±1.6",
+      "3.4±1.6",
+      "3.3±1.1",
+    ],
+    "ADAS Spoken Language": [
+      "",
+      "1.0±0.5",
+      "0.5±0.8",
+      "0.8±0.5",
+      "0.5±1.0",
+      "0.5±0.5",
+      "0.5±0.3",
+      "0.5±0.8",
+      "0.5±0.5",
+    ],
+    "ADAS Word Finding": [
+      "",
+      "0.1±0.3",
+      "0.4±0.5",
+      "0.1±0.3",
+      "0.2±0.3",
+      "0.3±0.4",
+      "0.4±0.3",
+      "0.3±0.5",
+      "0.2±0.3",
+    ],
+    "ADAS Word Recongnition": [
+      "",
+      "0.1±0.2",
+      "0.8±1.2",
+      "0.3±0.2",
+      "0.2±0.5",
+      "0.5±0.6",
+      "0.6±0.8",
+      "0.5±0.6",
+      "0.3±0.5",
+    ],
+  });
+
+  const [c, setC] = useState({
+    "CDR Community ": [
+      "",
+      "0.1±0.2",
+      "1.0±1.2",
+      "0.2±0.3",
+      "0.3±0.5",
+      "0.6±0.8",
+      "1.0±1.3",
+      "0.5±0.6",
+      "10.3±0.5",
+    ],
+    "": [
+      "",
+      "1.0±0.5",
+      "0.6±0.6",
+      "0.8±0.5",
+      "0.6±0.5",
+      "0.5±0.6",
+      "0.6±0.8",
+      "0.8±0.6",
+      "0.8±0.5",
+    ],
+    "CDR Judgement": [
+      "",
+      "3.0±1.2",
+      "3.3±1.5",
+      "3.2±1.5",
+      "3.1±1.6",
+      "3.2±1.7",
+      "3.4±1.6",
+      "3.4±1.6",
+      "3.3±1.1",
+    ],
+    "": [
+      "",
+      "1.0±0.5",
+      "0.5±0.8",
+      "0.8±0.5",
+      "0.5±1.0",
+      "0.5±0.5",
+      "0.5±0.3",
+      "0.5±0.8",
+      "0.5±0.5",
+    ],
+    "ADAS Word Finding": [
+      "",
+      "0.1±0.3",
+      "0.4±0.5",
+      "0.1±0.3",
+      "0.2±0.3",
+      "0.3±0.4",
+      "0.4±0.3",
+      "0.3±0.5",
+      "0.2±0.3",
+    ],
+    "ADAS Word Recongnition": [
+      "",
+      "0.1±0.2",
+      "0.8±1.2",
+      "0.3±0.2",
+      "0.2±0.5",
+      "0.5±0.6",
+      "0.6±0.8",
+      "0.5±0.6",
+      "0.3±0.5",
+    ],
+  });
+
   return (
-    <div className="bg-black w-auto h-full text-white">
+    <div className="bg-black w-max h-full text-white">
       <Gnb />
       <div className="h-[138px]"></div>
       <div className="w-fit flex gap-[83px]">
@@ -153,6 +291,93 @@ const App = () => {
             <div className="flex bg-[#D9D9D94D] w-fit">
               <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[100px] border-r border-solid border-black flex justify-center">
                 ADAS
+              </div>
+              <div className="flex flex-col text-[30px]">
+                {Object.entries(c).map(([key, values]) => (
+                  <div key={key} className="flex cursor-pointer group">
+                    <div className="w-[400px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
+                      {key}
+                    </div>
+                    <div className="flex">
+                      {values.map((value, index) => (
+                        <div
+                          key={index}
+                          className={`flex w-[133px] h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                            (index !== 0 || index !== values.length - 1) &&
+                            "border-r border-solid border-black"
+                          }`}
+                        >
+                          {value}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                <div className="pl-[24px]"></div>
+              </div>
+            </div>
+            <div className="text-white h-[46px] flex items-center text-[30px]">
+              <div className="w-[100px] h-full"></div>
+              <div className="w-[400px] pl-[24px] h-full flex items-center">
+                ADAS Ideational
+              </div>
+              <div className="bg-[#594c80] w-[133px] h-full flex items-center justify-center">
+                0
+              </div>
+              <div className="w-[133px] h-full flex items-center justify-center">
+                4.0±0.2
+              </div>
+              <div className="w-[133px] h-full flex items-center justify-center">
+                3.0±1.2
+              </div>
+              <div className="w-[133px] h-full flex items-center justify-center">
+                4.2±0.3
+              </div>
+              <div className="w-[133px] h-full flex items-center justify-center">
+                3.2±1.3
+              </div>
+              <div className="w-[133px] h-full flex items-center justify-center">
+                3.4±1.3
+              </div>
+              <div className="w-[133px] h-full flex items-center justify-center">
+                3.4±1.3
+              </div>
+              <div className="w-[133px] h-full flex items-center justify-center">
+                3.2±1.2
+              </div>
+              <div className="w-[133px] h-full flex items-center justify-center">
+                4.5±0.9
+              </div>
+            </div>
+            <div className="flex bg-[#D9D9D94D] w-fit border-b border-solid border-black">
+              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[100px] border-r border-solid border-black flex justify-center"></div>
+              <div className="flex flex-col text-[30px]">
+                {Object.entries(b).map(([key, values]) => (
+                  <div key={key} className="flex cursor-pointer group">
+                    <div className="w-[400px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
+                      {key}
+                    </div>
+                    <div className="flex">
+                      {values.map((value, index) => (
+                        <div
+                          key={index}
+                          className={`flex w-[133px] h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                            (index !== 0 || index !== values.length - 1) &&
+                            "border-r border-solid border-black"
+                          }`}
+                        >
+                          {value}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                <div className="pl-[24px]"></div>
+              </div>
+            </div>
+            <div className="flex bg-[#D9D9D94D] w-fit border-b border-solid border-black">
+              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[100px] border-r border-solid border-black flex justify-center">
+                CDR
               </div>
               <div className="flex flex-col text-[30px]">
                 {Object.entries(a).map(([key, values]) => (
