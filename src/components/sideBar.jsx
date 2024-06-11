@@ -14,13 +14,65 @@ const Sidebar = () => {
   const [left9, setLeft9] = useState("");
   const [left10, setLeft10] = useState("");
   const [left11, setLeft11] = useState("");
-  const [left12, setLeftt12] = useState("");
+  const [left12, setLeft12] = useState("");
+  const [left13, setLeft13] = useState("");
+  const [left14, setLeft14] = useState("");
+
+
+  // const getValue = (number) => {
+  //   if(number === 1) return left1;
+  //   if(number === 2) return left2;
+  //   if(number === 3) return left3;
+  //   if(number === 4) return left4;
+  //   if(number === 5) return left5;
+  //   if(number === 6) return left6;
+  //   if(number === 7) return left7;
+  //   if(number === 8) return left8;
+  //   if(number === 9) return left9;
+  //   if(number === 10) return left10;
+  //   if(number === 11) return left11;
+  //   if(number === 12) return left12;    
+  // }
+
+  // const handleChange = (e, number) => {
+  //   let value = e.target.value;
+
+  //   if(number === 1) return setLeft1(value);
+  //   if(number === 2) return setLeft2(value);
+  //   if(number === 3) return setLeft3(value);
+  //   if(number === 4) return setLeft4(value);
+  //   if(number === 5) return setLeft5(value);
+  //   if(number === 6) return setLeft6(value);
+  //   if(number === 7) return setLeft7(value);
+  //   if(number === 8) return setLeft8(value);
+  //   if(number === 9) return setLeft9(value);
+  //   if(number === 10) return setLeft10(value);
+  //   if(number === 11) return setLeft11(value);
+  //   if(number === 12) return setLeft12(value);    
+  // }
+
+  const handleClickTest = () => {
+    setLeft1('82');
+    setLeft2('Male');
+    setLeft3('1');
+    setLeft4('AD');
+    setLeft5('70.2kg');
+    setLeft6('170cm');
+    setLeft7('-');
+    setLeft8('-');
+    setLeft9('-');
+    setLeft10('No');
+    setLeft11('No');
+    setLeft12('Male');
+    setLeft13('Whte');
+    setLeft14('Alzheimer');
+  }
 
   return (
-    <div className="w-[552px] h-full overflow-y-auto">
-      <div className="w-[469ox] h-[256px] flex relative mb-[33px]">
-        <div className="bg-[#00FFC2] w-[12px] h-full"></div>
-        <div className="bg-[#5E35F5] w-[457px] h-full rounded-tr-[16px] rounded-br-[16px]"></div>
+    <div className="!w-fit !h-full overflo!w-y-auto">
+      <div className="!h-[256px] flex relative mb-[33px]">
+        <div className="bg-[#00FFC2] !w-[12px] !h-full"></div>
+        <div className="bg-[#2f1a7a] !w-[457px] !h-full rounded-tr-[16px] rounded-br-[16px]"></div>
         <img
           src={side}
           className="cursor-pointer absolute bottom-0"
@@ -29,76 +81,176 @@ const Sidebar = () => {
       </div>
       <div className="flex flex-col pl-[54px]">
         <div className="flex gap-[19px] pb-[38px]">
-          <div className="border-t-[4px] border-solid border-white w-[306px] pt-[7px] leading-[1.4]">
+          <div className="border-t-[4px] border-solid border-white !w-[306px] pt-[7px] leading-[1.4]">
             <div className="text-[25px]">Age ( years )</div>
             <div className="text-[25px]">Sex</div>
             <div className="text-[25px]">ApoE e4 count</div>
           </div>
-          <div className="w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
-            <input
-              className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
-              value={getValue("a", index2)}
-              onChange={(e) => {
-                handleChange(e, "a", index2);
-              }}
-              maxLength={1}
-            ></input>
-            <div className="text-[25px]">Male</div>
-            <div className="text-[25px]">1</div>
+          <div className="!w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
+            <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left1}
+                onChange={(e) => {
+                  setLeft1(e.target.value)
+                }}
+              ></input>
+            </div>
+            <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left2}
+                onChange={(e) => {
+                  setLeft2(e.target.value)
+                }}
+              ></input>
+            </div>
+            <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left3}
+                onChange={(e) => {
+                  setLeft3(e.target.value)
+                }}
+              ></input>
+            </div>
           </div>
         </div>
         <div className="flex gap-[19px] pb-[38px]">
-          <div className="border-t-[4px] border-solid border-white w-[306px] pt-[7px] leading-[1.4]">
+          <div className="border-t-[4px] border-solid border-white !w-[306px] pt-[7px] leading-[1.4]">
             <div className="text-[25px]">Diagnosis</div>
             <div className="text-[25px]">Weight</div>
             <div className="text-[25px]">Height</div>
           </div>
-          <div className="w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
-            <div className="text-[25px]">AD</div>
-            <div className="text-[25px]">70.2 kg</div>
-            <div className="text-[25px]">170cm</div>
+          <div className="!w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
+          <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left4}
+                onChange={(e) => {
+                  setLeft4(e.target.value)
+                }}
+              ></input>
+            </div>
+            <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left5}
+                onChange={(e) => {
+                  setLeft5(e.target.value)
+                }}
+              ></input>
+            </div>
+            <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left6}
+                onChange={(e) => {
+                  setLeft6(e.target.value)
+                }}
+              ></input>
+            </div>
           </div>
         </div>
         <div className="flex gap-[19px] pb-[38px]">
-          <div className="border-t-[4px] border-solid border-white w-[306px] pt-[7px] leading-[1.4]">
+          <div className="border-t-[4px] border-solid border-white !w-[306px] pt-[7px] leading-[1.4]">
             <div className="text-[25px]">Amyloid Status</div>
             <div className="text-[25px]">CSF Total tau</div>
             <div className="text-[25px]">CSF p-tau181</div>
           </div>
-          <div className="w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
-            <div className="text-[25px]">-</div>
-            <div className="text-[25px]">-</div>
-            <div className="text-[25px]">-</div>
+          <div className="!w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
+          <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left7}
+                onChange={(e) => {
+                  setLeft7(e.target.value)
+                }}
+              ></input>
+            </div>
+            <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left8}
+                onChange={(e) => {
+                  setLeft8(e.target.value)
+                }}
+              ></input>
+            </div>
+            <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left9}
+                onChange={(e) => {
+                  setLeft9(e.target.value)
+                }}
+              ></input>
+            </div>
           </div>
         </div>
         <div className="flex gap-[19px] pb-[38px]">
-          <div className="border-t-[4px] border-solid border-white w-[306px] pt-[7px] leading-[1.4]">
+          <div className="border-t-[4px] border-solid border-white !w-[306px] pt-[7px] leading-[1.4]">
             <div className="text-[25px]">History of Hypertension</div>
             <div className="text-[25px]">History of Type ll Diabetes</div>
           </div>
-          <div className="w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
-            <div className="text-[25px]">No</div>
-            <div className="text-[25px]">No</div>
+          <div className="!w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
+          <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left10}
+                onChange={(e) => {
+                  setLeft10(e.target.value)
+                }}
+              ></input>
+            </div>
+            <div className="!h-[35px]">
+              <input
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                value={left11}
+                onChange={(e) => {
+                  setLeft11(e.target.value)
+                }}
+              ></input>
+            </div>
           </div>
         </div>
       </div>
       <div className="pl-[54px] text-[30px] font-bold mb-[130px]">
         <div className="flex gap-[15px] mb-[30px]">
-          <div className="px-[25px] h-[60px] bg-[#5825F5] text-white flex items-center justify-center rounded-[50px]">
-            Male
+          <div className="px-[25px] !h-[60px] bg-[#5825F5] text-white flex items-center justify-center rounded-[50px] w-[140px]">
+            <input
+                className="text-white outline-none bg-[#5825F5] w-full text-center"
+                value={left12}
+                onChange={(e) => {
+                  setLeft12(e.target.value)
+                }}
+            ></input>
           </div>
-          <div className="px-[25px] h-[60px] bg-white text-[#681BFF] flex items-center justify-center rounded-[50px]">
-            White
+          <div className="px-[25px] !h-[60px] flex items-center justify-center rounded-[50px] w-[140px] bg-white text-[#681BFF]">
+            <input
+                className="outline-none bg-white text-[#681BFF] w-full text-center"
+                value={left13}
+                onChange={(e) => {
+                  setLeft13(e.target.value)
+                }}
+            ></input>
           </div>
         </div>
-        <div className="px-[25px] w-fit h-[60px] bg-[#00FFC2] text-[#681BFF] rounded-[50px] flex items-center justify-center">
-          Alzheimer
+        <div className="px-[25px] !h-[60px] bg-[#00FFC2] text-[#681BFF] rounded-[50px] flex items-center justify-center w-[217px]">
+          <input
+                className="outline-none  bg-[#00FFC2] text-[#681BFF] w-full text-center"
+                value={left14}
+                onChange={(e) => {
+                  setLeft14(e.target.value)
+                }}
+          ></input>
         </div>
+        <div onClick={handleClickTest} className="bg-white bg-opacity-20 w-fit px-[10px] py-[5px] rounded-[50px] mt-[20px] cursor-pointer font-normal text-[25px]">Test</div>
       </div>
-      <div className="pl-[54px] cursor-pointer mb-[50px]">
+       <div className="pl-[54px] cursor-pointer mb-[50px]">
         <img
           src={down}
-          className="cursor-pointer w-[85px] h-[85px]s"
+          className="cursor-pointer !w-[85px] !h-[85px]s"
           alt="icon"
         />
       </div>

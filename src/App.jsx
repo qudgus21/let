@@ -529,7 +529,7 @@ const App = () => {
       </button> */}
       <Gnb />
       <div className="h-[138px]"></div>
-      <div className="w-fit flex gap-[83px] bg-black">
+      <div className="flex gap-[83px] bg-black">
         <Sidebar />
         <div className="w-full h-full">
           <div className="font-bold text-[50px] mb-[10px]">
@@ -540,8 +540,8 @@ const App = () => {
           </div>
           <div className="flex flex-col mb-[100px]">
             <div className="bg-[#171717] h-[107px] mt-[20px] flex w-fit">
-              <div className="w-[100px] border border-solid border-black"></div>
-              <div className="w-[400px]"></div>
+              <div className="w-[110px] border border-solid border-black"></div>
+              <div className="w-[444px]"></div>
               <img
                 src={man}
                 className="cursor-pointer w-[133px] h-[104px] bg-gray"
@@ -589,8 +589,8 @@ const App = () => {
               />
             </div>
             <div className="text-[#8057FF] text-[30px] font-bold min-h-[46px] flex items-center">
-              <div className="w-[100px] pl-[24px]"></div>
-              <div className="w-[400px] pl-[24px]">Time (months)</div>
+              <div className="w-[110px] pl-[24px]"></div>
+              <div className="w-[444px] pl-[24px]">Time (months)</div>
               <div className="w-[133px] text-center">Baseline</div>
               <div className="w-[133px] text-center">3</div>
               <div className="w-[133px] text-center">6</div>
@@ -602,13 +602,13 @@ const App = () => {
               <div className="w-[133px] text-center">24</div>
             </div>
             <div className="flex bg-[#D9D9D94D] w-fit">
-              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[100px] border-r border-solid border-black flex justify-center">
+              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[110px] border-r border-solid border-black flex justify-center">
                 ADAS
               </div>
               <div className="flex flex-col text-[30px]">
                 {Object.entries(a).map(([key, values], index2) => (
                   <div key={key} className="flex cursor-pointer group">
-                    <div className="w-[400px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
+                    <div className="w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
                       {key}
                     </div>
                     <div className="flex">
@@ -642,8 +642,8 @@ const App = () => {
               </div>
             </div>
             <div className="text-white min-h-[46px] flex items-center text-[30px]">
-              <div className="w-[100px] h-full"></div>
-              <div className="w-[400px] pl-[24px] h-full flex items-center">
+              <div className="w-[110px] h-full"></div>
+              <div className="w-[444px] pl-[24px] h-full flex items-center">
                 ADAS Ideational
               </div>
               <input
@@ -681,11 +681,11 @@ const App = () => {
               </div>
             </div>
             <div className="flex bg-[#D9D9D94D] w-fit border-b border-solid border-black">
-              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[100px] border-r border-solid border-black flex justify-center"></div>
+              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[110px] border-r border-solid border-black flex justify-center"></div>
               <div className="flex flex-col text-[30px]">
                 {Object.entries(b).map(([key, values], index2) => (
                   <div key={key} className="flex cursor-pointer group">
-                    <div className="w-[400px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
+                    <div className="w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
                       {key}
                     </div>
                     <div className="flex">
@@ -719,13 +719,13 @@ const App = () => {
               </div>
             </div>
             <div className="flex bg-[#D9D9D94D] w-fit border-b border-solid border-black">
-              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[100px] border-r border-solid border-black flex justify-center">
+              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[110px] border-r border-solid border-black flex justify-center">
                 CDR
               </div>
               <div className="flex flex-col text-[30px]">
                 {Object.entries(c).map(([key, values], index2) => (
                   <div key={key} className="flex cursor-pointer group">
-                    <div className="w-[400px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
+                    <div className="w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
                       {key}
                     </div>
                     <div className="flex">
@@ -759,13 +759,13 @@ const App = () => {
               </div>
             </div>
             <div className="flex bg-[#D9D9D94D] w-fit border-b border-solid border-black">
-              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[100px] border-r border-solid border-black flex justify-center">
+              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[110px] border-r border-solid border-black flex justify-center">
                 MMSE
               </div>
               <div className="flex flex-col text-[30px]">
                 {Object.entries(d).map(([key, values], index2) => (
                   <div key={key} className="flex cursor-pointer group">
-                    <div className="w-[400px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
+                    <div className="w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
                       {key}
                     </div>
                     <div className="flex">
@@ -803,7 +803,7 @@ const App = () => {
       </div>
       {isProgress && (
         <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[626px] h-[246px] rounded-[50px] bg-opacity-50 bg-black text-[30px] text-white">
-          <div className="backdrop-blur-md w-[626px] h-[246px] rounded-[50px] flex flex-col items-center justify-center gap-[25px]">
+          <div className="backdrop-blur-md w-[626px] h-[246px] rounded-[50px] flex flex-col items-center justify-center gap-[25px] border border-solid border-white">
             <div className="">Optivis is analyzing..</div>
             <div className="w-[503px]">
               <BorderLinearProgress variant="determinate" value={percent} />
