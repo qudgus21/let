@@ -212,7 +212,7 @@ const Sidebar = () => {
                 }}
           ></input>
         </div>
-        <div onClick={handleClickTest} className="bg-white bg-opacity-20 w-fit px-[10px] py-[5px] rounded-[50px] mt-[20px] cursor-pointer font-normal text-[25px]">Test</div>
+        {/* <div onClick={handleClickTest} className="bg-white bg-opacity-20 w-fit px-[10px] py-[5px] rounded-[50px] mt-[20px] cursor-pointer font-normal text-[25px]">Test</div> */}
       </div>
        <div className="pl-[54px] cursor-pointer mb-[50px]">
         <img

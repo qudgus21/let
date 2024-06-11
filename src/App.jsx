@@ -11,6 +11,8 @@ import { styled } from "@mui/material/styles";
 const App = () => {
   const [percent, setPercent] = useState(0);
   const [isProgress, setIsProgress] = useState(false);
+  const [isShowSub, setIsShowSub] = useState(false);
+  const [currentSelect, setCurrentSelect] = useState('');
 
   const [a0, setA0] = useState("");
   const [a1, setA1] = useState("");
@@ -18,15 +20,13 @@ const App = () => {
   const [a3, setA3] = useState("");
   const [a4, setA4] = useState("");
   const [a5, setA5] = useState("");
-
-  const [sub, setSub] = useState("");
-
-  const [b0, setB0] = useState("");
-  const [b1, setB1] = useState("");
-  const [b2, setB2] = useState("");
-  const [b3, setB3] = useState("");
-  const [b4, setB4] = useState("");
-  const [b5, setB5] = useState("");
+  const [a6, setA6] = useState("");
+  const [a7, setA7] = useState("");
+  const [a8, setA8] = useState("");
+  const [a9, setA9] = useState("");
+  const [a10, setA10] = useState("");
+  const [a11, setA11] = useState("");
+  const [a12, setA12] = useState("");
 
   const [c0, setC0] = useState("");
   const [c1, setC1] = useState("");
@@ -42,6 +42,35 @@ const App = () => {
   const [d4, setD4] = useState("");
   const [d5, setD5] = useState("");
   const [d6, setD6] = useState("");
+
+  const [sa0, setSa0] = useState(false);
+  const [sa1, setSa1] = useState(false);
+  const [sa2, setSa2] = useState(false);
+  const [sa3, setSa3] = useState(false);
+  const [sa4, setSa4] = useState(false);
+  const [sa5, setSa5] = useState(false);
+  const [sa6, setSa6] = useState(false);
+  const [sa7, setSa7] = useState(false);
+  const [sa8, setSa8] = useState(false);
+  const [sa9, setSa9] = useState(false);
+  const [sa10, setSa10] = useState(false);
+  const [sa11, setSa11] = useState(false);
+  const [sa12, setSa12] = useState(false);
+
+  const [sc0, setSc0] = useState(false);
+  const [sc1, setSc1] = useState(false);
+  const [sc2, setSc2] = useState(false);
+  const [sc3, setSc3] = useState(false);
+  const [sc4, setSc4] = useState(false);
+  const [sc5, setSc5] = useState(false);
+
+  const [sd0, setSd0] = useState(false);
+  const [sd1, setSd1] = useState(false);
+  const [sd2, setSd2] = useState(false);
+  const [sd3, setSd3] = useState(false);
+  const [sd4, setSd4] = useState(false);
+  const [sd5, setSd5] = useState(false);
+  const [sd6, setSd6] = useState(false);
 
   const [a, setA] = useState({
     "ADAS Cancellation": [
@@ -110,9 +139,17 @@ const App = () => {
       "8.2±1.2",
       "7.5±1.1",
     ],
-  });
-
-  const [b, setB] = useState({
+    "ADAS Ideational": [
+      "4.0±0.2",
+      "3.0±1.2",
+      "4.2±0.3",
+      "3.2±1.3",
+      "3.4±1.3",
+      "3.4±1.3",
+      "4.2±0.3",
+      "3.2±1.2",
+      "4.5±0.9"
+    ],
     "ADAS Naming": [
       "",
       "0.1±0.2",
@@ -193,7 +230,7 @@ const App = () => {
       "4.5±0.5",
       "4.3±0.2",
     ],
-    "": [
+    "CDR Home Hobbies": [
       "",
       "4.1±2.5",
       "8.3±3.0",
@@ -338,15 +375,14 @@ const App = () => {
       if (index === 3) return a3;
       if (index === 4) return a4;
       if (index === 5) return a5;
-    }
+      if (index === 6) return a6;
+      if (index === 7) return a7;
+      if (index === 8) return a8;
+      if (index === 9) return a9;
+      if (index === 10) return a10;
+      if (index === 11) return a11;
+      if (index === 12) return a12;
 
-    if (num === "b") {
-      if (index === 0) return b0;
-      if (index === 1) return b1;
-      if (index === 2) return b2;
-      if (index === 3) return b3;
-      if (index === 4) return b4;
-      if (index === 5) return b5;
     }
 
     if (num === "c") {
@@ -367,16 +403,10 @@ const App = () => {
       if (index === 5) return d5;
       if (index === 6) return d6;
     }
-
-    if (num === "sub") {
-      return sub;
-    }
   };
 
   const handleChange = (e, num, index) => {
     let value = e.target.value;
-
-    if (num === "sub") setSub(value);
 
     if (num === "a") {
       if (index === 0) setA0(value);
@@ -385,15 +415,13 @@ const App = () => {
       if (index === 3) setA3(value);
       if (index === 4) setA4(value);
       if (index === 5) setA5(value);
-    }
-
-    if (num === "b") {
-      if (index === 0) setB0(value);
-      if (index === 1) setB1(value);
-      if (index === 2) setB2(value);
-      if (index === 3) setB3(value);
-      if (index === 4) setB4(value);
-      if (index === 5) setB5(value);
+      if (index === 6) setA6(value);
+      if (index === 7) setA7(value);
+      if (index === 8) setA8(value);
+      if (index === 9) setA9(value);
+      if (index === 10) setA10(value);
+      if (index === 11) setA11(value);
+      if (index === 12) setA12(value);
     }
 
     if (num === "c") {
@@ -424,12 +452,13 @@ const App = () => {
       a3.trim() !== "" &&
       a4.trim() !== "" &&
       a5.trim() !== "" &&
-      b0.trim() !== "" &&
-      b1.trim() !== "" &&
-      b2.trim() !== "" &&
-      b3.trim() !== "" &&
-      b4.trim() !== "" &&
-      b5.trim() !== "" &&
+      a6.trim() !== "" &&
+      a7.trim() !== "" &&
+      a8.trim() !== "" &&
+      a9.trim() !== "" &&
+      a10.trim() !== "" &&
+      a11.trim() !== "" &&
+      a12.trim() !== "" &&
       c0.trim() !== "" &&
       c1.trim() !== "" &&
       c2.trim() !== "" &&
@@ -442,8 +471,7 @@ const App = () => {
       d3.trim() !== "" &&
       d4.trim() !== "" &&
       d5.trim() !== "" &&
-      d6.trim() !== "" &&
-      sub.trim() !== ""
+      d6.trim() !== ""
     ) {
       showPopup();
     }
@@ -454,12 +482,13 @@ const App = () => {
     a3,
     a4,
     a5,
-    b0,
-    b1,
-    b2,
-    b3,
-    b4,
-    b5,
+    a6,
+    a7,
+    a8,
+    a9,
+    a10,
+    a11,
+    a12,
     c0,
     c1,
     c2,
@@ -473,7 +502,6 @@ const App = () => {
     d4,
     d5,
     d6,
-    sub,
   ]);
   const showPopup = useCallback(() => {
     if (isProgress) return;
@@ -491,8 +519,9 @@ const App = () => {
     }
 
     setTimeout(() => {
-      setIsProgress(false); // 함수 실행이 끝났음을 표시
+      setIsProgress(false);
       setPercent(0);
+      setIsShowSub(true);
     }, 700);
   }, []);
 
@@ -519,10 +548,158 @@ const App = () => {
   //   }
   // }, [percent]);
 
+  const handleTest = () => {
+    setA0('0');
+    setA1('0');
+    setA2('0');
+    setA3('5');
+    setA4('1');
+    setA5('-');
+    setA6('4');
+    setA7('0');
+    setA8('2');
+    setA9('2');
+    setA10('1');
+    setA11('0');
+    setA12('0');
+
+    setC0('-');
+    setC1('-');
+    setC2('1');
+    setC3('1');
+    setC4('2');
+    setC5('1');
+
+    setD0('1');
+    setD1('-');
+    setD2('1');
+    setD3('3');
+    setD4('2');
+    setD5('0');
+    setD6('3');
+  }
+
+  const handleInputFocus = (num, index) => {
+    if (num === "a") {
+      if (index === 0) setSa0(true);
+      if (index === 1) setSa1(true);
+      if (index === 2) setSa2(true);
+      if (index === 3) setSa3(true);
+      if (index === 4) setSa4(true);
+      if (index === 5) setSa5(true);
+      if (index === 6) setSa6(true);
+      if (index === 7) setSa7(true);
+      if (index === 8) setSa8(true);
+      if (index === 9) setSa9(true);
+      if (index === 10) setSa10(true);
+      if (index === 11) setSa11(true);
+      if (index === 12) setSa12(true);
+    }
+
+    if (num === "c") {
+      if (index === 0) setSc0(true);
+      if (index === 1) setSc1(true);
+      if (index === 2) setSc2(true);
+      if (index === 3) setSc3(true);
+      if (index === 4) setSc4(true);
+      if (index === 5) setSc5(true);
+    }
+
+    if (num === "d") {
+      if (index === 0) setSd0(true);
+      if (index === 1) setSd1(true);
+      if (index === 2) setSd2(true);
+      if (index === 3) setSd3(true);
+      if (index === 4) setSd4(true);
+      if (index === 5) setSd5(true);
+      if (index === 6) setSd6(true);
+    }
+  }
+
+  const handleInputBlur = (num, index) => {
+    if (num === "a") {
+      if (index === 0) setSa0(false);
+      if (index === 1) setSa1(false);
+      if (index === 2) setSa2(false);
+      if (index === 3) setSa3(false);
+      if (index === 4) setSa4(false);
+      if (index === 5) setSa5(false);
+      if (index === 6) setSa6(false);
+      if (index === 7) setSa7(false);
+      if (index === 8) setSa8(false);
+      if (index === 9) setSa9(false);
+      if (index === 10) setSa10(false);
+      if (index === 11) setSa11(false);
+      if (index === 12) setSa12(false);
+    }
+
+    if (num === "c") {
+      if (index === 0) setSc0(false);
+      if (index === 1) setSc1(false);
+      if (index === 2) setSc2(false);
+      if (index === 3) setSc3(false);
+      if (index === 4) setSc4(false);
+      if (index === 5) setSc5(false);
+    }
+
+    if (num === "d") {
+      if (index === 0) setSd0(false);
+      if (index === 1) setSd1(false);
+      if (index === 2) setSd2(false);
+      if (index === 3) setSd3(false);
+      if (index === 4) setSd4(false);
+      if (index === 5) setSd5(false);
+      if (index === 6) setSd6(false);
+    }
+  }
+
+  const handleSelect = (num, index) => {
+    if (num === "a") {
+      if (index === 0) setCurrentSelect("a0");
+      if (index === 1) setCurrentSelect("a1");
+      if (index === 2) setCurrentSelect("a2");
+      if (index === 3) setCurrentSelect("a3");
+      if (index === 4) setCurrentSelect("a4");
+      if (index === 5) setCurrentSelect("a5");
+      if (index === 6) setCurrentSelect("a6");
+      if (index === 7) setCurrentSelect("a7");
+      if (index === 8) setCurrentSelect("a8");
+      if (index === 9) setCurrentSelect("a9");
+      if (index === 10) setCurrentSelect("a10");
+      if (index === 11) setCurrentSelect("a11");
+      if (index === 12) setCurrentSelect("a12");
+    }
+
+    if (num === "c") {
+      if (index === 0) setCurrentSelect("c0");
+      if (index === 1) setCurrentSelect("c1");
+      if (index === 2) setCurrentSelect("c2");
+      if (index === 3) setCurrentSelect("c3");
+      if (index === 4) setCurrentSelect("c4");
+      if (index === 5) setCurrentSelect("c5");
+    }
+
+    if (num === "d") {
+      if (index === 0) setCurrentSelect("d0");
+      if (index === 1) setCurrentSelect("d1");
+      if (index === 2) setCurrentSelect("d2");
+      if (index === 3) setCurrentSelect("d3");
+      if (index === 4) setCurrentSelect("d4");
+      if (index === 5) setCurrentSelect("d5");
+      if (index === 6) setCurrentSelect("d6");
+    }
+  }
+
   return (
     <div className="bg-black w-auto h-full text-white">
       {/* <button
         onClick={showPopup}
+        className="fixed top-[300px] left-[500px] z-100 bg-white"
+      >
+        임시실행
+      </button> */}
+      {/* <button
+        onClick={()=>{}}
         className="fixed top-[300px] left-[500px] z-100 bg-white"
       >
         임시실행
@@ -532,108 +709,210 @@ const App = () => {
       <div className="flex gap-[83px] bg-black">
         <Sidebar />
         <div className="w-fit h-full bg-black">
-          <div className="font-bold text-[50px] mb-[10px]">
-            Participant’s Baseline in Alzheimer’s Disease
+          <div className="font-bold text-[50px] mb-[10px] flex justify-between">
+            <div>Participant’s Baseline in Alzheimer’s Disease</div>
+            <div onClick={handleTest} className="px-[25px] !h-[60px] bg-[#5825F5] text-white flex items-center justify-center rounded-[50px] w-[140px] text-[30px] cursor-pointer">TEST</div>
           </div>
           <div className="font-bold text-[30px]">
             Study ID : CPAD | Patient ID : 9QW2U
           </div>
           <div className="flex flex-col mb-[100px]">
             <div className="bg-[#171717] h-[107px] mt-[20px] flex w-fit">
-              <div className="w-[110px] border border-solid border-black"></div>
+              <div className="w-[110px] border border-solid border-black flex items-center justify-center">
+
+              </div>
               <div className="w-[444px]"></div>
               <img
                 src={man}
                 className="cursor-pointer w-[133px] h-[104px] bg-gray"
                 alt="icon"
               />{" "}
-              <img
-                src={blurman}
-                className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
-                alt="icon"
-              />
-              <img
-                src={blurman}
-                className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
-                alt="icon"
-              />
-              <img
-                src={blurman}
-                className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
-                alt="icon"
-              />
-              <img
-                src={blurman}
-                className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
-                alt="icon"
-              />
-              <img
-                src={blurman}
-                className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
-                alt="icon"
-              />
-              <img
-                src={blurman}
-                className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
-                alt="icon"
-              />
-              <img
-                src={blurman}
-                className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
-                alt="icon"
-              />
-              <img
-                src={blurman}
-                className="cursor-pointer w-[133px] h-[104px] bg-[#171717]"
-                alt="icon"
-              />
+              {
+                !isShowSub ?
+                <span className="w-[1064px]"></span>:
+                <span className="flex">
+                  <img
+                    src={blurman}
+                    className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
+                    alt="icon"
+                  />
+                  <img
+                    src={blurman}
+                    className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
+                    alt="icon"
+                  />
+                  <img
+                    src={blurman}
+                    className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
+                    alt="icon"
+                  />
+                  <img
+                    src={blurman}
+                    className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
+                    alt="icon"
+                  />
+                  <img
+                    src={blurman}
+                    className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
+                    alt="icon"
+                  />
+                  <img
+                    src={blurman}
+                    className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
+                    alt="icon"
+                  />
+                  <img
+                    src={blurman}
+                    className="cursor-pointer w-[133px] h-[104px] bg-[#171717] border-r border-solid border-black"
+                    alt="icon"
+                  />
+                  <img
+                    src={blurman}
+                    className="cursor-pointer w-[133px] h-[104px] bg-[#171717]"
+                    alt="icon"
+                  />
+                </span>
+              }
+
             </div>
             <div className="text-[#8057FF] text-[30px] font-bold min-h-[46px] flex items-center">
               <div className="w-[110px] pl-[24px]"></div>
               <div className="w-[444px] pl-[24px]">Time (months)</div>
               <div className="w-[133px] text-center">Baseline</div>
-              <div className="w-[133px] text-center">3</div>
-              <div className="w-[133px] text-center">6</div>
-              <div className="w-[133px] text-center">9</div>
-              <div className="w-[133px] text-center">12</div>
-              <div className="w-[133px] text-center">15</div>
-              <div className="w-[133px] text-center">18</div>
-              <div className="w-[133px] text-center">21</div>
-              <div className="w-[133px] text-center">24</div>
+              {
+                !isShowSub ?
+                <span className="w-[1064px]"></span>
+                :
+                <span className="flex">
+                  <div className="w-[133px] text-center">3</div>
+                  <div className="w-[133px] text-center">6</div>
+                  <div className="w-[133px] text-center">9</div>
+                  <div className="w-[133px] text-center">12</div>
+                  <div className="w-[133px] text-center">15</div>
+                  <div className="w-[133px] text-center">18</div>
+                  <div className="w-[133px] text-center">21</div>
+                  <div className="w-[133px] text-center">24</div>
+                </span>
+              }
+
             </div>
             <div className="flex bg-[#D9D9D94D] w-fit">
-              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[110px] border-r border-solid border-black flex justify-center">
+              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[110px] border-r border-solid border-black flex justify-center border-b border-solid border-black">
                 ADAS
               </div>
-              <div className="flex flex-col text-[30px]">
+              <div className="flex flex-col text-[30px] border-b border-solid border-black">
                 {Object.entries(a).map(([key, values], index2) => (
-                  <div key={key} className="flex cursor-pointer group">
-                    <div className="w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
+                  <div key={key} className="flex cursor-pointer group" onClick={()=>{handleSelect('a', index2)}}>
+                    <div className={`w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
+                    ${index2 === 0 && currentSelect !=="a0" && 'group-hover:black'}
+                    ${index2 === 1 && currentSelect !=="a1"  && 'group-hover:black'}
+                    ${index2 === 2 && currentSelect !=="a2"  && 'group-hover:black'}
+                    ${index2 === 3 && currentSelect !=="a3"  && 'group-hover:black'}
+                    ${index2 === 4 && currentSelect !=="a4"  && 'group-hover:black'}
+                    ${index2 === 5 && currentSelect !=="a5"  && 'group-hover:black'}
+                    ${index2 === 6 && currentSelect !=="a6"  && 'group-hover:black'}
+                    ${index2 === 7 && currentSelect !=="a7"  && 'group-hover:black'}
+                    ${index2 === 8 && currentSelect !=="a8"  && 'group-hover:black'}
+                    ${index2 === 9 && currentSelect !=="a9"  && 'group-hover:black'}
+                    ${index2 === 10 && currentSelect !=="a10"  && 'group-hover:black'}
+                    ${index2 === 11 && currentSelect !=="a11"  && 'group-hover:black'}
+                    ${index2 === 12 && currentSelect !=="a12"  && 'group-hover:black'}
+                    ${index2 === 0 && currentSelect === "a0" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 1 && currentSelect === "a1" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 2 && currentSelect === "a2" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 3 && currentSelect === "a3" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 4 && currentSelect === "a4" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 5 && currentSelect === "a5" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 6 && currentSelect === "a6" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 7 && currentSelect === "a7" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 8 && currentSelect === "a8" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 9 && currentSelect === "a9" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 10 && currentSelect === "a10" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 11 && currentSelect === "a11" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    ${index2 === 12 && currentSelect === "a12" ? '!bg-black': 'bg-[D9D9D94D]'}
+                    `}>
                       {key}
                     </div>
                     <div className="flex">
                       {values.map((value, index) => {
                         return index === 0 ? (
                           <input
-                            className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
+                            className={`flex w-[133px] min-h-[46px] items-center justify-center text-center outline-none
+                            ${index2 === 0 && !sa0 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 1 && !sa1 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 2 && !sa2 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 3 && !sa3 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 4 && !sa4 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 5 && !sa5 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 6 && !sa6 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 7 && !sa7 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 8 && !sa8 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 9 && !sa9 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 10 && !sa10 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 11 && !sa11 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 12 && !sa12 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 0 && sa0 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 1 && sa1 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 2 && sa2 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 3 && sa3 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 4 && sa4 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 5 && sa5 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 6 && sa6 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 7 && sa7 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 8 && sa8 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 9 && sa9 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 10 && sa10 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 11 && sa11 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 12 && sa12 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            `}
                             value={getValue("a", index2)}
                             onChange={(e) => {
                               handleChange(e, "a", index2);
                             }}
                             disabled={isProgress}
                             maxLength={1}
+                            onFocus={()=>{handleInputFocus("a", index2) }}
+                            onBlur={()=> {handleInputBlur("a", index2) }}
                           ></input>
-                        ) : (
+                        ) : 
+                          !isShowSub ? <span className="w-[133px]"></span>: 
                           <div
-                            key={index}
-                            className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
-                              (index !== 0 || index !== values.length - 1) &&
-                              "border-r border-solid border-black"
-                            }`}
+                          key={index}
+                          className={`here3 flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                            (index !== 0 || index !== values.length - 1) &&
+                            "border-r border-solid border-black"
+                          }
+                          ${index2 === 0 && !sa0 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 1 && !sa1 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 2 && !sa2 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 3 && !sa3 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 4 && !sa4 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 5 && !sa5 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 6 && !sa6 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 7 && !sa7 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 8 && !sa8 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 9 && !sa9 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 10 && !sa10 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 11 && !sa11 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 12 && !sa12 && 'group-hover:bg-[#6f6f6f]'}
+                          ${index2 === 0 && sa0 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 1 && sa1 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 2 && sa2 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 3 && sa3 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 4 && sa4 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 5 && sa5 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 6 && sa6 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 7 && sa7 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 8 && sa8 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 9 && sa9 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 10 && sa10 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 11 && sa11 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          ${index2 === 12 && sa12 ? '!bg-black': 'bg-[D9D9D94D]'}
+                          `}
                           >
                             {value}
                           </div>
-                        );
+                          ;
                       })}
                     </div>
                   </div>
@@ -641,83 +920,7 @@ const App = () => {
                 <div className="pl-[24px]"></div>
               </div>
             </div>
-            <div className="text-white min-h-[46px] flex items-center text-[30px]">
-              <div className="w-[110px] h-full"></div>
-              <div className="w-[444px] pl-[24px] h-full flex items-center">
-                ADAS Ideational
-              </div>
-              <input
-                className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#594c80] outline-none"
-                value={getValue("sub")}
-                onChange={(e) => {
-                  handleChange(e, "sub");
-                }}
-                disabled={isProgress}
-                maxLength={1}
-              ></input>
-              <div className="w-[133px] h-full flex items-center justify-center">
-                4.0±0.2
-              </div>
-              <div className="w-[133px] h-full flex items-center justify-center">
-                3.0±1.2
-              </div>
-              <div className="w-[133px] h-full flex items-center justify-center">
-                4.2±0.3
-              </div>
-              <div className="w-[133px] h-full flex items-center justify-center">
-                3.2±1.3
-              </div>
-              <div className="w-[133px] h-full flex items-center justify-center">
-                3.4±1.3
-              </div>
-              <div className="w-[133px] h-full flex items-center justify-center">
-                3.4±1.3
-              </div>
-              <div className="w-[133px] h-full flex items-center justify-center">
-                3.2±1.2
-              </div>
-              <div className="w-[133px] h-full flex items-center justify-center">
-                4.5±0.9
-              </div>
-            </div>
-            <div className="flex bg-[#D9D9D94D] w-fit border-b border-solid border-black">
-              <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[110px] border-r border-solid border-black flex justify-center"></div>
-              <div className="flex flex-col text-[30px]">
-                {Object.entries(b).map(([key, values], index2) => (
-                  <div key={key} className="flex cursor-pointer group">
-                    <div className="w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
-                      {key}
-                    </div>
-                    <div className="flex">
-                      {values.map((value, index) => {
-                        return index === 0 ? (
-                          <input
-                            className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
-                            value={getValue("b", index2)}
-                            onChange={(e) => {
-                              handleChange(e, "b", index2);
-                            }}
-                            disabled={isProgress}
-                            maxLength={1}
-                          ></input>
-                        ) : (
-                          <div
-                            key={index}
-                            className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
-                              (index !== 0 || index !== values.length - 1) &&
-                              "border-r border-solid border-black"
-                            }`}
-                          >
-                            {value}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                ))}
-                <div className="pl-[24px]"></div>
-              </div>
-            </div>
+
             <div className="flex bg-[#D9D9D94D] w-fit border-b border-solid border-black">
               <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[110px] border-r border-solid border-black flex justify-center">
                 CDR
@@ -725,32 +928,76 @@ const App = () => {
               <div className="flex flex-col text-[30px]">
                 {Object.entries(c).map(([key, values], index2) => (
                   <div key={key} className="flex cursor-pointer group">
-                    <div className="w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
+                    <div className={`w-[444px] pl-[24px] flex items-center
+                      ${index2 === 0 && !sc0 && 'group-hover:bg-[#6f6f6f]'}
+                      ${index2 === 1 && !sc1 && 'group-hover:bg-[#6f6f6f]'}
+                      ${index2 === 2 && !sc2 && 'group-hover:bg-[#6f6f6f]'}
+                      ${index2 === 3 && !sc3 && 'group-hover:bg-[#6f6f6f]'}
+                      ${index2 === 4 && !sc4 && 'group-hover:bg-[#6f6f6f]'}
+                      ${index2 === 5 && !sc5 && 'group-hover:bg-[#6f6f6f]'}
+                      ${index2 === 0 && sc0 ? 'bg-black': 'bg-[D9D9D94D]'}
+                      ${index2 === 1 && sc1 ? 'bg-black': 'bg-[D9D9D94D]'}
+                      ${index2 === 2 && sc2 ? 'bg-black': 'bg-[D9D9D94D]'}
+                      ${index2 === 3 && sc3 ? 'bg-black': 'bg-[D9D9D94D]'}
+                      ${index2 === 4 && sc4 ? 'bg-black': 'bg-[D9D9D94D]'}
+                      ${index2 === 5 && sc5 ? 'bg-black': 'bg-[D9D9D94D]'}
+                    `}>
                       {key}
                     </div>
                     <div className="flex">
                       {values.map((value, index) => {
                         return index === 0 ? (
                           <input
-                            className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
+                            className={`flex w-[133px] min-h-[46px] items-center justify-center text-center outline-none
+                            ${index2 === 0 && !sc0 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 1 && !sc1 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 2 && !sc2 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 3 && !sc3 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 4 && !sc4 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 5 && !sc5 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 0 && sc0 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 1 && sc1 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 2 && sc2 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 3 && sc3 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 4 && sc4 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 5 && sc5 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            `
+                            }
                             value={getValue("c", index2)}
                             onChange={(e) => {
                               handleChange(e, "c", index2);
                             }}
                             disabled={isProgress}
                             maxLength={1}
+                            onFocus={()=>{handleInputFocus("c", index2) }}
+                            onBlur={()=> {handleInputBlur("c", index2) }}
                           ></input>
-                        ) : (
-                          <div
-                            key={index}
-                            className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
-                              (index !== 0 || index !== values.length - 1) &&
-                              "border-r border-solid border-black"
-                            }`}
-                          >
-                            {value}
-                          </div>
-                        );
+                        ) :
+                        !isShowSub ? <span className="w-[133px]"></span>: 
+                        <div
+                        key={index}
+                        className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                          (index !== 0 || index !== values.length - 1) &&
+                          "border-r border-solid border-black"
+                        }
+                        ${index2 === 0 && !sc0 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 1 && !sc1 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 2 && !sc2 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 3 && !sc3 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 4 && !sc4 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 5 && !sc5 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 0 && sc0 ? '!bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 1 && sc1 ? '!bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 2 && sc2 ? '!bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 3 && sc3 ? '!bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 4 && sc4 ? '!bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 5 && sc5 ? '!bg-black': 'bg-[D9D9D94D]'}
+
+                        `}
+                        >
+                          {value}
+                        </div>
+                        ;
                       })}
                     </div>
                   </div>
@@ -765,32 +1012,66 @@ const App = () => {
               <div className="flex flex-col text-[30px]">
                 {Object.entries(d).map(([key, values], index2) => (
                   <div key={key} className="flex cursor-pointer group">
-                    <div className="w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]">
+                    <div className={`w-[444px] pl-[24px] flex items-center
+                        ${index2 === 0 && !sd0 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 1 && !sd1 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 2 && !sd2 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 3 && !sd3 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 4 && !sd4 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 5 && !sd5 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 6 && !sd6 && 'group-hover:bg-[#6f6f6f]'}
+                        ${index2 === 0 && sd0 ? 'bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 1 && sd1 ? 'bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 2 && sd2 ? 'bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 3 && sd3 ? 'bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 4 && sd4 ? 'bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 5 && sd5 ? 'bg-black': 'bg-[D9D9D94D]'}
+                        ${index2 === 6 && sd6 ? 'bg-black': 'bg-[D9D9D94D]'}
+                    `}>
                       {key}
                     </div>
                     <div className="flex">
                       {values.map((value, index) => {
                         return index === 0 ? (
                           <input
-                            className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
+                            className={`flex w-[133px] min-h-[46px] items-center justify-center text-center outline-none
+                            ${index2 === 0 && !sd0 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 1 && !sd1 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 2 && !sd2 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 3 && !sd3 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 4 && !sd4 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 5 && !sd5 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 6 && !sd6 && 'group-hover:bg-[#9a94ae]'}
+                            ${index2 === 0 && sd0 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 1 && sd1 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 2 && sd2 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 3 && sd3 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 4 && sd4 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 5 && sd5 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            ${index2 === 6 && sd6 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+
+                            `}
                             value={getValue("d", index2)}
                             onChange={(e) => {
                               handleChange(e, "d", index2);
                             }}
                             disabled={isProgress}
                             maxLength={1}
+                            onFocus={()=>{handleInputFocus("d", index2) }}
+                            onBlur={()=> {handleInputBlur("d", index2) }}
                           ></input>
-                        ) : (
-                          <div
-                            key={index}
-                            className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
-                              (index !== 0 || index !== values.length - 1) &&
-                              "border-r border-solid border-black"
-                            }`}
-                          >
-                            {value}
-                          </div>
-                        );
+                        ) : 
+                        !isShowSub ? <span className="w-[133px]"></span>: 
+                        <div
+                        key={index}
+                        className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                          (index !== 0 || index !== values.length - 1) &&
+                          "border-r border-solid border-black"
+                        }`}
+                        >
+                          {value}
+                        </div>
+                        ;
                       })}
                     </div>
                   </div>
