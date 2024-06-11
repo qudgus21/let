@@ -18,39 +18,6 @@ const Sidebar = () => {
   const [left13, setLeft13] = useState("");
   const [left14, setLeft14] = useState("");
 
-
-  // const getValue = (number) => {
-  //   if(number === 1) return left1;
-  //   if(number === 2) return left2;
-  //   if(number === 3) return left3;
-  //   if(number === 4) return left4;
-  //   if(number === 5) return left5;
-  //   if(number === 6) return left6;
-  //   if(number === 7) return left7;
-  //   if(number === 8) return left8;
-  //   if(number === 9) return left9;
-  //   if(number === 10) return left10;
-  //   if(number === 11) return left11;
-  //   if(number === 12) return left12;    
-  // }
-
-  // const handleChange = (e, number) => {
-  //   let value = e.target.value;
-
-  //   if(number === 1) return setLeft1(value);
-  //   if(number === 2) return setLeft2(value);
-  //   if(number === 3) return setLeft3(value);
-  //   if(number === 4) return setLeft4(value);
-  //   if(number === 5) return setLeft5(value);
-  //   if(number === 6) return setLeft6(value);
-  //   if(number === 7) return setLeft7(value);
-  //   if(number === 8) return setLeft8(value);
-  //   if(number === 9) return setLeft9(value);
-  //   if(number === 10) return setLeft10(value);
-  //   if(number === 11) return setLeft11(value);
-  //   if(number === 12) return setLeft12(value);    
-  // }
-
   const handleClickTest = () => {
     setLeft1('82');
     setLeft2('Male');

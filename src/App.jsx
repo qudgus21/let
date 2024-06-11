@@ -531,7 +531,7 @@ const App = () => {
       <div className="h-[138px]"></div>
       <div className="flex gap-[83px] bg-black">
         <Sidebar />
-        <div className="w-full h-full">
+        <div className="w-fit h-full bg-black">
           <div className="font-bold text-[50px] mb-[10px]">
             Participant’s Baseline in Alzheimer’s Disease
           </div>
