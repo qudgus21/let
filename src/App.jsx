@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Gnb from "./components/gnb";
 import Sidebar from "./components/sideBar";
 import man from "./assets/man.png";
 import blurman from "./assets/blurman.png";
+import LinearProgress, {
+  linearProgressClasses,
+} from "@mui/material/LinearProgress";
+import { styled } from "@mui/material/styles";
 
 const App = () => {
+  const [percent, setPercent] = useState(0);
+  const [isProgress, setIsProgress] = useState(false);
+
   const [a0, setA0] = useState("");
   const [a1, setA1] = useState("");
   const [a2, setA2] = useState("");
@@ -438,7 +445,7 @@ const App = () => {
       d6.trim() !== "" &&
       sub.trim() !== ""
     ) {
-      console.log("데이터다참");
+      showPopup();
     }
   }, [
     a0,
@@ -468,9 +475,58 @@ const App = () => {
     d6,
     sub,
   ]);
+  const showPopup = useCallback(() => {
+    if (isProgress) return;
+
+    setIsProgress(true); // 함수가 실행 중임을 표시
+    goInterval();
+  }, [isProgress]);
+
+  const goInterval = useCallback(async () => {
+    let currentPercent = percent;
+    while (currentPercent < 100) {
+      await new Promise((resolve) => setTimeout(resolve, 10)); // 10ms 마다 대기
+      currentPercent += 1;
+      setPercent(currentPercent);
+    }
+
+    setTimeout(() => {
+      setIsProgress(false); // 함수 실행이 끝났음을 표시
+      setPercent(0);
+    }, 700);
+  }, []);
+
+  // const showPopup = () => {
+  //   setIsProgress(true);
+
+  //   const interval = setInterval(() => {
+  //     if (percent < 100) {
+  //       setPercent((prevPercent) => {
+  //         const nextPercent = prevPercent + 1;
+  //         return nextPercent <= 100 ? nextPercent : prevPercent;
+  //       });
+  //     } else {
+  //       clearInterval(interval);
+  //       setIsProgress(false);
+  //     }
+  //   }, 20);
+  // };
+
+  // useEffect(() => {
+  //   if (percent === 100) {
+  //     setIsProgress(false);
+  //     setPercent(0);
+  //   }
+  // }, [percent]);
 
   return (
     <div className="bg-black w-max h-full text-white">
+      {/* <button
+        onClick={showPopup}
+        className="fixed top-[300px] left-[500px] z-100 bg-white"
+      >
+        임시실행
+      </button> */}
       <Gnb />
       <div className="h-[138px]"></div>
       <div className="w-fit flex gap-[83px]">
@@ -564,6 +620,8 @@ const App = () => {
                             onChange={(e) => {
                               handleChange(e, "a", index2);
                             }}
+                            disabled={isProgress}
+                            maxLength={1}
                           ></input>
                         ) : (
                           <div
@@ -594,6 +652,8 @@ const App = () => {
                 onChange={(e) => {
                   handleChange(e, "sub");
                 }}
+                disabled={isProgress}
+                maxLength={1}
               ></input>
               <div className="w-[133px] h-full flex items-center justify-center">
                 4.0±0.2
@@ -637,6 +697,8 @@ const App = () => {
                             onChange={(e) => {
                               handleChange(e, "b", index2);
                             }}
+                            disabled={isProgress}
+                            maxLength={1}
                           ></input>
                         ) : (
                           <div
@@ -675,6 +737,8 @@ const App = () => {
                             onChange={(e) => {
                               handleChange(e, "c", index2);
                             }}
+                            disabled={isProgress}
+                            maxLength={1}
                           ></input>
                         ) : (
                           <div
@@ -713,6 +777,8 @@ const App = () => {
                             onChange={(e) => {
                               handleChange(e, "d", index2);
                             }}
+                            disabled={isProgress}
+                            maxLength={1}
                           ></input>
                         ) : (
                           <div
@@ -735,8 +801,31 @@ const App = () => {
           </div>
         </div>
       </div>
+      {isProgress && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[626px] h-[246px] rounded-[50px] bg-opacity-50 bg-black text-[30px] text-white">
+          <div className="backdrop-blur-md w-[626px] h-[246px] rounded-[50px] flex flex-col items-center justify-center gap-[25px]">
+            <div className="">Optivis is analyzing..</div>
+            <div className="w-[503px]">
+              <BorderLinearProgress variant="determinate" value={percent} />
+            </div>
+            <div>{percent}%</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
+
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+  height: 31,
+  borderRadius: 15,
+  [`&.${linearProgressClasses.colorPrimary}`]: {
+    backgroundColor: "#6c6c6c",
+  },
+  [`& .${linearProgressClasses.bar}`]: {
+    borderRadius: 5,
+    background: `linear-gradient(to right, #3200FF, #9F01FF)`,
+  },
+}));
 
 export default App;
