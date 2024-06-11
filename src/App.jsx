@@ -520,7 +520,7 @@ const App = () => {
   // }, [percent]);
 
   return (
-    <div className="bg-black w-max h-full text-white">
+    <div className="bg-black w-auto h-full text-white">
       {/* <button
         onClick={showPopup}
         className="fixed top-[300px] left-[500px] z-100 bg-white"
@@ -529,7 +529,7 @@ const App = () => {
       </button> */}
       <Gnb />
       <div className="h-[138px]"></div>
-      <div className="w-fit flex gap-[83px]">
+      <div className="w-fit flex gap-[83px] bg-black">
         <Sidebar />
         <div className="w-full h-full">
           <div className="font-bold text-[50px] mb-[10px]">
@@ -588,7 +588,7 @@ const App = () => {
                 alt="icon"
               />
             </div>
-            <div className="text-[#8057FF] text-[30px] font-bold h-[46px] flex items-center">
+            <div className="text-[#8057FF] text-[30px] font-bold min-h-[46px] flex items-center">
               <div className="w-[100px] pl-[24px]"></div>
               <div className="w-[400px] pl-[24px]">Time (months)</div>
               <div className="w-[133px] text-center">Baseline</div>
@@ -615,7 +615,7 @@ const App = () => {
                       {values.map((value, index) => {
                         return index === 0 ? (
                           <input
-                            className="flex w-[133px] h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
+                            className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
                             value={getValue("a", index2)}
                             onChange={(e) => {
                               handleChange(e, "a", index2);
@@ -626,7 +626,7 @@ const App = () => {
                         ) : (
                           <div
                             key={index}
-                            className={`flex w-[133px] h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                            className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
                               (index !== 0 || index !== values.length - 1) &&
                               "border-r border-solid border-black"
                             }`}
@@ -641,13 +641,13 @@ const App = () => {
                 <div className="pl-[24px]"></div>
               </div>
             </div>
-            <div className="text-white h-[46px] flex items-center text-[30px]">
+            <div className="text-white min-h-[46px] flex items-center text-[30px]">
               <div className="w-[100px] h-full"></div>
               <div className="w-[400px] pl-[24px] h-full flex items-center">
                 ADAS Ideational
               </div>
               <input
-                className="flex w-[133px] h-[46px] items-center justify-center text-center bg-[#594c80] outline-none"
+                className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#594c80] outline-none"
                 value={getValue("sub")}
                 onChange={(e) => {
                   handleChange(e, "sub");
@@ -692,7 +692,7 @@ const App = () => {
                       {values.map((value, index) => {
                         return index === 0 ? (
                           <input
-                            className="flex w-[133px] h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
+                            className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
                             value={getValue("b", index2)}
                             onChange={(e) => {
                               handleChange(e, "b", index2);
@@ -703,7 +703,7 @@ const App = () => {
                         ) : (
                           <div
                             key={index}
-                            className={`flex w-[133px] h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                            className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
                               (index !== 0 || index !== values.length - 1) &&
                               "border-r border-solid border-black"
                             }`}
@@ -732,7 +732,7 @@ const App = () => {
                       {values.map((value, index) => {
                         return index === 0 ? (
                           <input
-                            className="flex w-[133px] h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
+                            className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
                             value={getValue("c", index2)}
                             onChange={(e) => {
                               handleChange(e, "c", index2);
@@ -743,7 +743,7 @@ const App = () => {
                         ) : (
                           <div
                             key={index}
-                            className={`flex w-[133px] h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                            className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
                               (index !== 0 || index !== values.length - 1) &&
                               "border-r border-solid border-black"
                             }`}
@@ -772,7 +772,7 @@ const App = () => {
                       {values.map((value, index) => {
                         return index === 0 ? (
                           <input
-                            className="flex w-[133px] h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
+                            className="flex w-[133px] min-h-[46px] items-center justify-center text-center bg-[#80769a] group-hover:bg-[#9a94ae] outline-none"
                             value={getValue("d", index2)}
                             onChange={(e) => {
                               handleChange(e, "d", index2);
@@ -783,7 +783,7 @@ const App = () => {
                         ) : (
                           <div
                             key={index}
-                            className={`flex w-[133px] h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                            className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
                               (index !== 0 || index !== values.length - 1) &&
                               "border-r border-solid border-black"
                             }`}
