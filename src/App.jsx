@@ -841,7 +841,7 @@ const App = () => {
           <div className="flex flex-col mb-[100px]">
             <div className="bg-[#171717] h-[107px] mt-[20px] flex w-fit">
               <div className="w-[110px] border border-solid border-black flex items-center justify-center"></div>
-              <div className="w-[444px]"></div>
+              <div className="w-[470px]"></div>
               <img
                 onClick={handleClickModal}
                 src={man}
@@ -897,7 +897,7 @@ const App = () => {
             </div>
             <div className="text-[#8057FF] text-[30px] font-bold min-h-[46px] flex items-center">
               <div className="w-[110px] pl-[24px]"></div>
-              <div className="w-[444px] pl-[24px]">Time (months)</div>
+              <div className="w-[470px] pl-[24px]">Time (months)</div>
               <div className="w-[133px] text-center">Baseline</div>
               {!isShowSub ? (
                 <span className="w-[1064px]"></span>
@@ -928,7 +928,7 @@ const App = () => {
                     }}
                   >
                     <div
-                      className={`w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
+                      className={`w-[470px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
                     ${
                       index2 === 0 &&
                       currentSelect !== "a0" &&
@@ -1509,7 +1509,7 @@ const App = () => {
                     }}
                   >
                     <div
-                      className={`w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
+                      className={`w-[470px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
                       ${
                         index2 === 0 &&
                         currentSelect !== "c0" &&
@@ -1809,7 +1809,7 @@ const App = () => {
                     }}
                   >
                     <div
-                      className={`w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
+                      className={`w-[470px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
                       ${
                         index2 === 0 &&
                         currentSelect !== "d0" &&
