@@ -473,6 +473,8 @@ const App = () => {
       d6.trim() !== ""
     ) {
       showPopup();
+    } else {
+      setIsShowSub(false);
     }
   }, [
     a0,
