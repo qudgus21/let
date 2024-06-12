@@ -443,67 +443,67 @@ const App = () => {
     }
   };
 
-  useEffect(() => {
-    if (
-      a0.trim() !== "" &&
-      a1.trim() !== "" &&
-      a2.trim() !== "" &&
-      a3.trim() !== "" &&
-      a4.trim() !== "" &&
-      a5.trim() !== "" &&
-      a6.trim() !== "" &&
-      a7.trim() !== "" &&
-      a8.trim() !== "" &&
-      a9.trim() !== "" &&
-      a10.trim() !== "" &&
-      a11.trim() !== "" &&
-      a12.trim() !== "" &&
-      c0.trim() !== "" &&
-      c1.trim() !== "" &&
-      c2.trim() !== "" &&
-      c3.trim() !== "" &&
-      c4.trim() !== "" &&
-      c5.trim() !== "" &&
-      d0.trim() !== "" &&
-      d1.trim() !== "" &&
-      d2.trim() !== "" &&
-      d3.trim() !== "" &&
-      d4.trim() !== "" &&
-      d5.trim() !== "" &&
-      d6.trim() !== ""
-    ) {
-      showPopup();
-    } else {
-      setIsShowSub(false);
-    }
-  }, [
-    a0,
-    a1,
-    a2,
-    a3,
-    a4,
-    a5,
-    a6,
-    a7,
-    a8,
-    a9,
-    a10,
-    a11,
-    a12,
-    c0,
-    c1,
-    c2,
-    c3,
-    c4,
-    c5,
-    d0,
-    d1,
-    d2,
-    d3,
-    d4,
-    d5,
-    d6,
-  ]);
+  // useEffect(() => {
+  //   if (
+  //     a0.trim() !== "" &&
+  //     a1.trim() !== "" &&
+  //     a2.trim() !== "" &&
+  //     a3.trim() !== "" &&
+  //     a4.trim() !== "" &&
+  //     a5.trim() !== "" &&
+  //     a6.trim() !== "" &&
+  //     a7.trim() !== "" &&
+  //     a8.trim() !== "" &&
+  //     a9.trim() !== "" &&
+  //     a10.trim() !== "" &&
+  //     a11.trim() !== "" &&
+  //     a12.trim() !== "" &&
+  //     c0.trim() !== "" &&
+  //     c1.trim() !== "" &&
+  //     c2.trim() !== "" &&
+  //     c3.trim() !== "" &&
+  //     c4.trim() !== "" &&
+  //     c5.trim() !== "" &&
+  //     d0.trim() !== "" &&
+  //     d1.trim() !== "" &&
+  //     d2.trim() !== "" &&
+  //     d3.trim() !== "" &&
+  //     d4.trim() !== "" &&
+  //     d5.trim() !== "" &&
+  //     d6.trim() !== ""
+  //   ) {
+  //     showPopup();
+  //   } else {
+  //     setIsShowSub(false);
+  //   }
+  // }, [
+  //   a0,
+  //   a1,
+  //   a2,
+  //   a3,
+  //   a4,
+  //   a5,
+  //   a6,
+  //   a7,
+  //   a8,
+  //   a9,
+  //   a10,
+  //   a11,
+  //   a12,
+  //   c0,
+  //   c1,
+  //   c2,
+  //   c3,
+  //   c4,
+  //   c5,
+  //   d0,
+  //   d1,
+  //   d2,
+  //   d3,
+  //   d4,
+  //   d5,
+  //   d6,
+  // ]);
   const showPopup = useCallback(() => {
     if (isProgress) return;
 
@@ -578,6 +578,8 @@ const App = () => {
     setD4("2");
     setD5("0");
     setD6("3");
+
+    showPopup();
   };
 
   const handleInputFocus = (num, index) => {
@@ -691,6 +693,82 @@ const App = () => {
     }
   };
 
+  
+  const handleKeyPress = useCallback((event) => {
+    if (event.key === 'Enter') {
+      if (
+        a0.trim() !== "" &&
+        a1.trim() !== "" &&
+        a2.trim() !== "" &&
+        a3.trim() !== "" &&
+        a4.trim() !== "" &&
+        a5.trim() !== "" &&
+        a6.trim() !== "" &&
+        a7.trim() !== "" &&
+        a8.trim() !== "" &&
+        a9.trim() !== "" &&
+        a10.trim() !== "" &&
+        a11.trim() !== "" &&
+        a12.trim() !== "" &&
+        c0.trim() !== "" &&
+        c1.trim() !== "" &&
+        c2.trim() !== "" &&
+        c3.trim() !== "" &&
+        c4.trim() !== "" &&
+        c5.trim() !== "" &&
+        d0.trim() !== "" &&
+        d1.trim() !== "" &&
+        d2.trim() !== "" &&
+        d3.trim() !== "" &&
+        d4.trim() !== "" &&
+        d5.trim() !== "" &&
+        d6.trim() !== ""
+      ) {
+        showPopup();
+      } else {
+        setIsShowSub(false);
+      }
+
+    }
+  }, [
+    a0,
+    a1,
+    a2,
+    a3,
+    a4,
+    a5,
+    a6,
+    a7,
+    a8,
+    a9,
+    a10,
+    a11,
+    a12,
+    c0,
+    c1,
+    c2,
+    c3,
+    c4,
+    c5,
+    d0,
+    d1,
+    d2,
+    d3,
+    d4,
+    d5,
+    d6,
+  ]);
+
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 이벤트 리스너를 추가합니다.
+    window.addEventListener('keydown', handleKeyPress);
+
+    // 컴포넌트가 언마운트될 때 이벤트 리스너를 제거합니다.
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [handleKeyPress]);
+
   return (
     <div className="bg-black w-auto h-full text-white !font-poppins">
       {/* <button
@@ -716,7 +794,7 @@ const App = () => {
             </div>
             <div
               onClick={handleTest}
-              className="px-[25px] !h-[60px] bg-[#5825F5] text-white flex items-center justify-center rounded-[50px] w-[120px] text-[30px] cursor-pointer"
+              className="px-[25px] !h-[60px] bg-[#6f6f6f] text-black flex items-center justify-center rounded-[50px] w-[120px] text-[30px] cursor-pointer"
             >
               TEST
             </div>
