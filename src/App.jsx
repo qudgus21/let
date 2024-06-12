@@ -12,7 +12,7 @@ const App = () => {
   const [percent, setPercent] = useState(0);
   const [isProgress, setIsProgress] = useState(false);
   const [isShowSub, setIsShowSub] = useState(false);
-  const [currentSelect, setCurrentSelect] = useState('');
+  const [currentSelect, setCurrentSelect] = useState("");
 
   const [a0, setA0] = useState("");
   const [a1, setA1] = useState("");
@@ -148,7 +148,7 @@ const App = () => {
       "3.4±1.3",
       "4.2±0.3",
       "3.2±1.2",
-      "4.5±0.9"
+      "4.5±0.9",
     ],
     "ADAS Naming": [
       "",
@@ -382,7 +382,6 @@ const App = () => {
       if (index === 10) return a10;
       if (index === 11) return a11;
       if (index === 12) return a12;
-
     }
 
     if (num === "c") {
@@ -549,35 +548,35 @@ const App = () => {
   // }, [percent]);
 
   const handleTest = () => {
-    setA0('0');
-    setA1('0');
-    setA2('0');
-    setA3('5');
-    setA4('1');
-    setA5('-');
-    setA6('4');
-    setA7('0');
-    setA8('2');
-    setA9('2');
-    setA10('1');
-    setA11('0');
-    setA12('0');
+    setA0("0");
+    setA1("0");
+    setA2("0");
+    setA3("5");
+    setA4("1");
+    setA5("-");
+    setA6("4");
+    setA7("0");
+    setA8("2");
+    setA9("2");
+    setA10("1");
+    setA11("0");
+    setA12("0");
 
-    setC0('-');
-    setC1('-');
-    setC2('1');
-    setC3('1');
-    setC4('2');
-    setC5('1');
+    setC0("-");
+    setC1("-");
+    setC2("1");
+    setC3("1");
+    setC4("2");
+    setC5("1");
 
-    setD0('1');
-    setD1('-');
-    setD2('1');
-    setD3('3');
-    setD4('2');
-    setD5('0');
-    setD6('3');
-  }
+    setD0("1");
+    setD1("-");
+    setD2("1");
+    setD3("3");
+    setD4("2");
+    setD5("0");
+    setD6("3");
+  };
 
   const handleInputFocus = (num, index) => {
     if (num === "a") {
@@ -614,7 +613,7 @@ const App = () => {
       if (index === 5) setSd5(true);
       if (index === 6) setSd6(true);
     }
-  }
+  };
 
   const handleInputBlur = (num, index) => {
     if (num === "a") {
@@ -651,7 +650,7 @@ const App = () => {
       if (index === 5) setSd5(false);
       if (index === 6) setSd6(false);
     }
-  }
+  };
 
   const handleSelect = (num, index) => {
     if (num === "a") {
@@ -688,10 +687,10 @@ const App = () => {
       if (index === 5) setCurrentSelect("d5");
       if (index === 6) setCurrentSelect("d6");
     }
-  }
+  };
 
   return (
-    <div className="bg-black w-auto h-full text-white">
+    <div className="bg-black w-auto h-full text-white !font-poppins">
       {/* <button
         onClick={showPopup}
         className="fixed top-[300px] left-[500px] z-100 bg-white"
@@ -710,26 +709,31 @@ const App = () => {
         <Sidebar />
         <div className="w-fit h-full bg-black">
           <div className="font-bold text-[50px] mb-[10px] flex justify-between">
-            <div>Participant’s Baseline in Alzheimer’s Disease</div>
-            <div onClick={handleTest} className="px-[25px] !h-[60px] bg-[#5825F5] text-white flex items-center justify-center rounded-[50px] w-[140px] text-[30px] cursor-pointer">TEST</div>
+            <div className="font-poppins">
+              Participant’s Baseline in Alzheimer’s Disease
+            </div>
+            <div
+              onClick={handleTest}
+              className="px-[25px] !h-[60px] bg-[#5825F5] text-white flex items-center justify-center rounded-[50px] w-[120px] text-[30px] cursor-pointer"
+            >
+              TEST
+            </div>
           </div>
           <div className="font-bold text-[30px]">
             Study ID : CPAD | Patient ID : 9QW2U
           </div>
           <div className="flex flex-col mb-[100px]">
             <div className="bg-[#171717] h-[107px] mt-[20px] flex w-fit">
-              <div className="w-[110px] border border-solid border-black flex items-center justify-center">
-
-              </div>
+              <div className="w-[110px] border border-solid border-black flex items-center justify-center"></div>
               <div className="w-[444px]"></div>
               <img
                 src={man}
                 className="cursor-pointer w-[133px] h-[104px] bg-gray"
                 alt="icon"
               />{" "}
-              {
-                !isShowSub ?
-                <span className="w-[1064px]"></span>:
+              {!isShowSub ? (
+                <span className="w-[1064px]"></span>
+              ) : (
                 <span className="flex">
                   <img
                     src={blurman}
@@ -772,17 +776,15 @@ const App = () => {
                     alt="icon"
                   />
                 </span>
-              }
-
+              )}
             </div>
             <div className="text-[#8057FF] text-[30px] font-bold min-h-[46px] flex items-center">
               <div className="w-[110px] pl-[24px]"></div>
               <div className="w-[444px] pl-[24px]">Time (months)</div>
               <div className="w-[133px] text-center">Baseline</div>
-              {
-                !isShowSub ?
+              {!isShowSub ? (
                 <span className="w-[1064px]"></span>
-                :
+              ) : (
                 <span className="flex">
                   <div className="w-[133px] text-center">3</div>
                   <div className="w-[133px] text-center">6</div>
@@ -793,8 +795,7 @@ const App = () => {
                   <div className="w-[133px] text-center">21</div>
                   <div className="w-[133px] text-center">24</div>
                 </span>
-              }
-
+              )}
             </div>
             <div className="flex bg-[#D9D9D94D] w-fit">
               <div className="pt-[8px] text-[#00FFC2] text-[30px] font-bold w-[110px] border-r border-solid border-black flex justify-center border-b border-solid border-black">
@@ -802,68 +803,284 @@ const App = () => {
               </div>
               <div className="flex flex-col text-[30px] border-b border-solid border-black">
                 {Object.entries(a).map(([key, values], index2) => (
-                  <div key={key} className="flex cursor-pointer group" onClick={()=>{handleSelect('a', index2)}}>
-                    <div className={`w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
-                    ${index2 === 0 && currentSelect !=="a0" && 'group-hover:black'}
-                    ${index2 === 1 && currentSelect !=="a1"  && 'group-hover:black'}
-                    ${index2 === 2 && currentSelect !=="a2"  && 'group-hover:black'}
-                    ${index2 === 3 && currentSelect !=="a3"  && 'group-hover:black'}
-                    ${index2 === 4 && currentSelect !=="a4"  && 'group-hover:black'}
-                    ${index2 === 5 && currentSelect !=="a5"  && 'group-hover:black'}
-                    ${index2 === 6 && currentSelect !=="a6"  && 'group-hover:black'}
-                    ${index2 === 7 && currentSelect !=="a7"  && 'group-hover:black'}
-                    ${index2 === 8 && currentSelect !=="a8"  && 'group-hover:black'}
-                    ${index2 === 9 && currentSelect !=="a9"  && 'group-hover:black'}
-                    ${index2 === 10 && currentSelect !=="a10"  && 'group-hover:black'}
-                    ${index2 === 11 && currentSelect !=="a11"  && 'group-hover:black'}
-                    ${index2 === 12 && currentSelect !=="a12"  && 'group-hover:black'}
-                    ${index2 === 0 && currentSelect === "a0" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 1 && currentSelect === "a1" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 2 && currentSelect === "a2" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 3 && currentSelect === "a3" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 4 && currentSelect === "a4" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 5 && currentSelect === "a5" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 6 && currentSelect === "a6" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 7 && currentSelect === "a7" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 8 && currentSelect === "a8" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 9 && currentSelect === "a9" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 10 && currentSelect === "a10" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 11 && currentSelect === "a11" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    ${index2 === 12 && currentSelect === "a12" ? '!bg-black': 'bg-[D9D9D94D]'}
-                    `}>
+                  <div
+                    key={key}
+                    className="flex cursor-pointer group"
+                    onClick={() => {
+                      handleSelect("a", index2);
+                    }}
+                  >
+                    <div
+                      className={`w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
+                    ${
+                      index2 === 0 &&
+                      currentSelect !== "a0" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 1 &&
+                      currentSelect !== "a1" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 2 &&
+                      currentSelect !== "a2" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 3 &&
+                      currentSelect !== "a3" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 4 &&
+                      currentSelect !== "a4" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 5 &&
+                      currentSelect !== "a5" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 6 &&
+                      currentSelect !== "a6" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 7 &&
+                      currentSelect !== "a7" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 8 &&
+                      currentSelect !== "a8" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 9 &&
+                      currentSelect !== "a9" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 10 &&
+                      currentSelect !== "a10" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 11 &&
+                      currentSelect !== "a11" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 12 &&
+                      currentSelect !== "a12" &&
+                      "group-hover:black"
+                    }
+                    ${
+                      index2 === 0 && currentSelect === "a0"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 1 && currentSelect === "a1"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 2 && currentSelect === "a2"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 3 && currentSelect === "a3"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 4 && currentSelect === "a4"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 5 && currentSelect === "a5"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 6 && currentSelect === "a6"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 7 && currentSelect === "a7"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 8 && currentSelect === "a8"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 9 && currentSelect === "a9"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 10 && currentSelect === "a10"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 11 && currentSelect === "a11"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    ${
+                      index2 === 12 && currentSelect === "a12"
+                        ? "!bg-black"
+                        : "bg-[D9D9D94D]"
+                    }
+                    `}
+                    >
                       {key}
                     </div>
                     <div className="flex">
                       {values.map((value, index) => {
                         return index === 0 ? (
                           <input
-                            className={`flex w-[133px] min-h-[46px] items-center justify-center text-center outline-none
-                            ${index2 === 0 && !sa0 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 1 && !sa1 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 2 && !sa2 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 3 && !sa3 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 4 && !sa4 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 5 && !sa5 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 6 && !sa6 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 7 && !sa7 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 8 && !sa8 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 9 && !sa9 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 10 && !sa10 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 11 && !sa11 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 12 && !sa12 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 0 && sa0 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 1 && sa1 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 2 && sa2 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 3 && sa3 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 4 && sa4 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 5 && sa5 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 6 && sa6 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 7 && sa7 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 8 && sa8 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 9 && sa9 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 10 && sa10 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 11 && sa11 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 12 && sa12 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            className={`flex w-[133px] min-h-[46px] items-center justify-center text-center outline-none group-hover:bg-[#9a94ae]
+                            ${
+                              index2 === 0 &&
+                              currentSelect !== "a0" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 1 &&
+                              currentSelect !== "a1" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 2 &&
+                              currentSelect !== "a2" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 3 &&
+                              currentSelect !== "a3" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 4 &&
+                              currentSelect !== "a4" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 5 &&
+                              currentSelect !== "a5" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 6 &&
+                              currentSelect !== "a6" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 7 &&
+                              currentSelect !== "a7" &&
+                              "group-hover:bg-[#9a94ae]"
+                            },
+                            ${
+                              index2 === 8 &&
+                              currentSelect !== "a8" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 9 &&
+                              currentSelect !== "a9" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 10 &&
+                              currentSelect !== "a10" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 11 &&
+                              currentSelect !== "a11" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 12 &&
+                              currentSelect !== "a12" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 0 && sa0
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 1 && sa1
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 2 && sa2
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 3 && sa3
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 4 && sa4
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 5 && sa5
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 6 && sa6
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 7 && sa7
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 8 && sa8
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 9 && sa9
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 10 && sa10
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 11 && sa11
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 12 && sa12
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
                             `}
                             value={getValue("a", index2)}
                             onChange={(e) => {
@@ -871,48 +1088,157 @@ const App = () => {
                             }}
                             disabled={isProgress}
                             maxLength={1}
-                            onFocus={()=>{handleInputFocus("a", index2) }}
-                            onBlur={()=> {handleInputBlur("a", index2) }}
+                            onFocus={() => {
+                              handleInputFocus("a", index2);
+                            }}
+                            onBlur={() => {
+                              handleInputBlur("a", index2);
+                            }}
                           ></input>
-                        ) : 
-                          !isShowSub ? <span className="w-[133px]"></span>: 
+                        ) : !isShowSub ? (
+                          <span className="w-[133px]"></span>
+                        ) : (
                           <div
-                          key={index}
-                          className={`here3 flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
-                            (index !== 0 || index !== values.length - 1) &&
-                            "border-r border-solid border-black"
-                          }
-                          ${index2 === 0 && !sa0 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 1 && !sa1 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 2 && !sa2 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 3 && !sa3 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 4 && !sa4 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 5 && !sa5 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 6 && !sa6 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 7 && !sa7 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 8 && !sa8 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 9 && !sa9 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 10 && !sa10 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 11 && !sa11 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 12 && !sa12 && 'group-hover:bg-[#6f6f6f]'}
-                          ${index2 === 0 && sa0 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 1 && sa1 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 2 && sa2 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 3 && sa3 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 4 && sa4 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 5 && sa5 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 6 && sa6 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 7 && sa7 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 8 && sa8 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 9 && sa9 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 10 && sa10 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 11 && sa11 ? '!bg-black': 'bg-[D9D9D94D]'}
-                          ${index2 === 12 && sa12 ? '!bg-black': 'bg-[D9D9D94D]'}
+                            key={index}
+                            className={`here3 flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                              (index !== 0 || index !== values.length - 1) &&
+                              "border-r border-solid border-black"
+                            }
+                            ${
+                              index2 === 0 &&
+                              currentSelect !== "a0" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 1 &&
+                              currentSelect !== "a1" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 2 &&
+                              currentSelect !== "a2" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 3 &&
+                              currentSelect !== "a3" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 4 &&
+                              currentSelect !== "a4" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 5 &&
+                              currentSelect !== "a5" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 6 &&
+                              currentSelect !== "a6" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 7 &&
+                              currentSelect !== "a7" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 8 &&
+                              currentSelect !== "a8" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 9 &&
+                              currentSelect !== "a9" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 10 &&
+                              currentSelect !== "a10" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 11 &&
+                              currentSelect !== "a11" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 12 &&
+                              currentSelect !== "a12" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 0 && currentSelect === "a0"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 1 && currentSelect === "a1"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 2 && currentSelect === "a2"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 3 && currentSelect === "a3"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 4 && currentSelect === "a4"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 5 && currentSelect === "a5"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 6 && currentSelect === "a6"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 7 && currentSelect === "a7"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 8 && currentSelect === "a8"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 9 && currentSelect === "a9"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 10 && currentSelect === "a10"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 11 && currentSelect === "a11"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 12 && currentSelect === "a12"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
                           `}
                           >
                             {value}
                           </div>
-                          ;
+                        );
                       })}
                     </div>
                   </div>
@@ -927,77 +1253,232 @@ const App = () => {
               </div>
               <div className="flex flex-col text-[30px]">
                 {Object.entries(c).map(([key, values], index2) => (
-                  <div key={key} className="flex cursor-pointer group">
-                    <div className={`w-[444px] pl-[24px] flex items-center
-                      ${index2 === 0 && !sc0 && 'group-hover:bg-[#6f6f6f]'}
-                      ${index2 === 1 && !sc1 && 'group-hover:bg-[#6f6f6f]'}
-                      ${index2 === 2 && !sc2 && 'group-hover:bg-[#6f6f6f]'}
-                      ${index2 === 3 && !sc3 && 'group-hover:bg-[#6f6f6f]'}
-                      ${index2 === 4 && !sc4 && 'group-hover:bg-[#6f6f6f]'}
-                      ${index2 === 5 && !sc5 && 'group-hover:bg-[#6f6f6f]'}
-                      ${index2 === 0 && sc0 ? 'bg-black': 'bg-[D9D9D94D]'}
-                      ${index2 === 1 && sc1 ? 'bg-black': 'bg-[D9D9D94D]'}
-                      ${index2 === 2 && sc2 ? 'bg-black': 'bg-[D9D9D94D]'}
-                      ${index2 === 3 && sc3 ? 'bg-black': 'bg-[D9D9D94D]'}
-                      ${index2 === 4 && sc4 ? 'bg-black': 'bg-[D9D9D94D]'}
-                      ${index2 === 5 && sc5 ? 'bg-black': 'bg-[D9D9D94D]'}
-                    `}>
+                  <div
+                    key={key}
+                    className="flex cursor-pointer group"
+                    onClick={() => {
+                      handleSelect("c", index2);
+                    }}
+                  >
+                    <div
+                      className={`w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
+                      ${
+                        index2 === 0 &&
+                        currentSelect !== "c0" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 1 &&
+                        currentSelect !== "c1" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 2 &&
+                        currentSelect !== "c2" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 3 &&
+                        currentSelect !== "c3" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 4 &&
+                        currentSelect !== "c4" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 5 &&
+                        currentSelect !== "c5" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 0 && currentSelect === "c0"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 1 && currentSelect === "c1"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 2 && currentSelect === "c2"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 3 && currentSelect === "c3"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 4 && currentSelect === "c4"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 5 && currentSelect === "c5"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                    `}
+                    >
                       {key}
                     </div>
                     <div className="flex">
                       {values.map((value, index) => {
                         return index === 0 ? (
                           <input
-                            className={`flex w-[133px] min-h-[46px] items-center justify-center text-center outline-none
-                            ${index2 === 0 && !sc0 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 1 && !sc1 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 2 && !sc2 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 3 && !sc3 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 4 && !sc4 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 5 && !sc5 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 0 && sc0 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 1 && sc1 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 2 && sc2 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 3 && sc3 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 4 && sc4 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 5 && sc5 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            `
+                            className={`flex w-[133px] min-h-[46px] items-center justify-center text-center outline-none group-hover:bg-[#9a94ae]
+                            ${
+                              index2 === 0 &&
+                              currentSelect !== "c0" &&
+                              "group-hover:bg-[#9a94ae]"
                             }
+                            ${
+                              index2 === 1 &&
+                              currentSelect !== "c1" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 2 &&
+                              currentSelect !== "c2" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 3 &&
+                              currentSelect !== "c3" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 4 &&
+                              currentSelect !== "c4" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 5 &&
+                              currentSelect !== "c5" &&
+                              "group-hover:bg-[#9a94ae]"
+                            } 
+                            ${
+                              index2 === 0 && sc0
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 1 && sc1
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 2 && sc2
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 3 && sc3
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 4 && sc4
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 5 && sc5
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            `}
                             value={getValue("c", index2)}
                             onChange={(e) => {
                               handleChange(e, "c", index2);
                             }}
                             disabled={isProgress}
                             maxLength={1}
-                            onFocus={()=>{handleInputFocus("c", index2) }}
-                            onBlur={()=> {handleInputBlur("c", index2) }}
+                            onFocus={() => {
+                              handleInputFocus("c", index2);
+                            }}
+                            onBlur={() => {
+                              handleInputBlur("c", index2);
+                            }}
                           ></input>
-                        ) :
-                        !isShowSub ? <span className="w-[133px]"></span>: 
-                        <div
-                        key={index}
-                        className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
-                          (index !== 0 || index !== values.length - 1) &&
-                          "border-r border-solid border-black"
-                        }
-                        ${index2 === 0 && !sc0 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 1 && !sc1 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 2 && !sc2 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 3 && !sc3 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 4 && !sc4 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 5 && !sc5 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 0 && sc0 ? '!bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 1 && sc1 ? '!bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 2 && sc2 ? '!bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 3 && sc3 ? '!bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 4 && sc4 ? '!bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 5 && sc5 ? '!bg-black': 'bg-[D9D9D94D]'}
-
+                        ) : !isShowSub ? (
+                          <span className="w-[133px]"></span>
+                        ) : (
+                          <div
+                            key={index}
+                            className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                              (index !== 0 || index !== values.length - 1) &&
+                              "border-r border-solid border-black"
+                            }
+                            ${
+                              index2 === 0 &&
+                              currentSelect !== "c0" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 1 &&
+                              currentSelect !== "c1" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 2 &&
+                              currentSelect !== "c2" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 3 &&
+                              currentSelect !== "c3" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 4 &&
+                              currentSelect !== "c4" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 5 &&
+                              currentSelect !== "c5" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 0 && currentSelect === "c0"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 1 && currentSelect === "c1"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 2 && currentSelect === "c2"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 3 && currentSelect === "c3"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 4 && currentSelect === "c4"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 5 && currentSelect === "c5"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
                         `}
-                        >
-                          {value}
-                        </div>
-                        ;
+                          >
+                            {value}
+                          </div>
+                        );
                       })}
                     </div>
                   </div>
@@ -1011,44 +1492,164 @@ const App = () => {
               </div>
               <div className="flex flex-col text-[30px]">
                 {Object.entries(d).map(([key, values], index2) => (
-                  <div key={key} className="flex cursor-pointer group">
-                    <div className={`w-[444px] pl-[24px] flex items-center
-                        ${index2 === 0 && !sd0 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 1 && !sd1 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 2 && !sd2 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 3 && !sd3 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 4 && !sd4 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 5 && !sd5 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 6 && !sd6 && 'group-hover:bg-[#6f6f6f]'}
-                        ${index2 === 0 && sd0 ? 'bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 1 && sd1 ? 'bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 2 && sd2 ? 'bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 3 && sd3 ? 'bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 4 && sd4 ? 'bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 5 && sd5 ? 'bg-black': 'bg-[D9D9D94D]'}
-                        ${index2 === 6 && sd6 ? 'bg-black': 'bg-[D9D9D94D]'}
-                    `}>
+                  <div
+                    key={key}
+                    className="flex cursor-pointer group"
+                    onClick={() => {
+                      handleSelect("d", index2);
+                    }}
+                  >
+                    <div
+                      className={`w-[444px] pl-[24px] flex items-center group-hover:bg-[#6f6f6f]
+                      ${
+                        index2 === 0 &&
+                        currentSelect !== "d0" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 1 &&
+                        currentSelect !== "d1" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 2 &&
+                        currentSelect !== "d2" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 3 &&
+                        currentSelect !== "d3" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 4 &&
+                        currentSelect !== "d4" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 5 &&
+                        currentSelect !== "d5" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 6 &&
+                        currentSelect !== "d6" &&
+                        "group-hover:black"
+                      }
+                      ${
+                        index2 === 0 && currentSelect === "d0"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 1 && currentSelect === "d1"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 2 && currentSelect === "d2"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 3 && currentSelect === "d3"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 4 && currentSelect === "d4"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 5 && currentSelect === "d5"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                      ${
+                        index2 === 6 && currentSelect === "d6"
+                          ? "!bg-black"
+                          : "bg-[D9D9D94D]"
+                      }
+                    `}
+                    >
                       {key}
                     </div>
                     <div className="flex">
                       {values.map((value, index) => {
                         return index === 0 ? (
                           <input
-                            className={`flex w-[133px] min-h-[46px] items-center justify-center text-center outline-none
-                            ${index2 === 0 && !sd0 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 1 && !sd1 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 2 && !sd2 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 3 && !sd3 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 4 && !sd4 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 5 && !sd5 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 6 && !sd6 && 'group-hover:bg-[#9a94ae]'}
-                            ${index2 === 0 && sd0 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 1 && sd1 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 2 && sd2 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 3 && sd3 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 4 && sd4 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 5 && sd5 ? '!bg-[#594c80]': 'bg-[#80769a]'}
-                            ${index2 === 6 && sd6 ? '!bg-[#594c80]': 'bg-[#80769a]'}
+                            className={`flex w-[133px] min-h-[46px] items-center justify-center text-center outline-none group-hover:bg-[#9a94ae]
+                            ${
+                              index2 === 0 &&
+                              currentSelect !== "d0" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 1 &&
+                              currentSelect !== "d1" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 2 &&
+                              currentSelect !== "d2" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 3 &&
+                              currentSelect !== "d3" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 4 &&
+                              currentSelect !== "d4" &&
+                              "group-hover:bg-[#9a94ae]"
+                            }
+                            ${
+                              index2 === 5 &&
+                              currentSelect !== "d5" &&
+                              "group-hover:bg-[#9a94ae]"
+                            } 
+                            ${
+                              index2 === 6 &&
+                              currentSelect !== "d6" &&
+                              "group-hover:bg-[#9a94ae]"
+                            } 
+                            ${
+                              index2 === 0 && sd0
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 1 && sd1
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 2 && sd2
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 3 && sd3
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 4 && sd4
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 5 && sd5
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 6 && sd6
+                                ? "!bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
 
                             `}
                             value={getValue("d", index2)}
@@ -1057,21 +1658,97 @@ const App = () => {
                             }}
                             disabled={isProgress}
                             maxLength={1}
-                            onFocus={()=>{handleInputFocus("d", index2) }}
-                            onBlur={()=> {handleInputBlur("d", index2) }}
+                            onFocus={() => {
+                              handleInputFocus("d", index2);
+                            }}
+                            onBlur={() => {
+                              handleInputBlur("d", index2);
+                            }}
                           ></input>
-                        ) : 
-                        !isShowSub ? <span className="w-[133px]"></span>: 
-                        <div
-                        key={index}
-                        className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
-                          (index !== 0 || index !== values.length - 1) &&
-                          "border-r border-solid border-black"
-                        }`}
-                        >
-                          {value}
-                        </div>
-                        ;
+                        ) : !isShowSub ? (
+                          <span className="w-[133px]"></span>
+                        ) : (
+                          <div
+                            key={index}
+                            className={`flex w-[133px] min-h-[46px] justify-center items-center group-hover:bg-[#6f6f6f] ${
+                              (index !== 0 || index !== values.length - 1) &&
+                              "border-r border-solid border-black"
+                            }
+                            ${
+                              index2 === 0 &&
+                              currentSelect !== "d0" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 1 &&
+                              currentSelect !== "d1" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 2 &&
+                              currentSelect !== "d2" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 3 &&
+                              currentSelect !== "d3" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 4 &&
+                              currentSelect !== "d4" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 5 &&
+                              currentSelect !== "d5" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 6 &&
+                              currentSelect !== "d6" &&
+                              "group-hover:black"
+                            }
+                            ${
+                              index2 === 0 && currentSelect === "d0"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 1 && currentSelect === "d1"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 2 && currentSelect === "d2"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 3 && currentSelect === "d3"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 4 && currentSelect === "d4"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 5 && currentSelect === "d5"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            ${
+                              index2 === 6 && currentSelect === "d6"
+                                ? "!bg-black"
+                                : "bg-[D9D9D94D]"
+                            }
+                            `}
+                          >
+                            {value}
+                          </div>
+                        );
                       })}
                     </div>
                   </div>
