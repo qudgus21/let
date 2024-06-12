@@ -578,8 +578,6 @@ const App = () => {
     setD4("2");
     setD5("0");
     setD6("3");
-
-    showPopup();
   };
 
   const handleInputFocus = (num, index) => {
@@ -692,10 +690,9 @@ const App = () => {
       if (index === 6) setCurrentSelect("d6");
     }
   };
-
+  const handleKeyPress = () => {}
   
-  const handleKeyPress = useCallback((event) => {
-    if (event.key === 'Enter') {
+  const handleClickModal = useCallback((event) => {
       if (
         a0.trim() !== "" &&
         a1.trim() !== "" &&
@@ -728,8 +725,6 @@ const App = () => {
       } else {
         setIsShowSub(false);
       }
-
-    }
   }, [
     a0,
     a1,
@@ -758,6 +753,39 @@ const App = () => {
     d5,
     d6,
   ]);
+
+  const handleReset = () => {
+    setA0("");
+    setA1("");
+    setA2("");
+    setA3("");
+    setA4("");
+    setA5("");
+    setA6("");
+    setA7("");
+    setA8("");
+    setA9("");
+    setA10("");
+    setA11("");
+    setA12("");
+
+    setC0("");
+    setC1("");
+    setC2("");
+    setC3("");
+    setC4("");
+    setC5("");
+
+    setD0("");
+    setD1("");
+    setD2("");
+    setD3("");
+    setD4("");
+    setD5("");
+    setD6("");
+
+    setIsShowSub(false);
+  }
 
   useEffect(() => {
     // 컴포넌트가 마운트될 때 이벤트 리스너를 추가합니다.
@@ -792,11 +820,19 @@ const App = () => {
             <div className="font-poppins">
               Participant’s Baseline in Alzheimer’s Disease
             </div>
+            <div className="flex gap-[10px]">
+            <div
+              onClick={handleReset}
+              className="px-[25px] !h-[60px] bg-[#6f6f6f] text-black flex items-center justify-center rounded-[50px] w-[120px] text-[30px] cursor-pointer"
+            >
+              RESET
+            </div>
             <div
               onClick={handleTest}
               className="px-[25px] !h-[60px] bg-[#6f6f6f] text-black flex items-center justify-center rounded-[50px] w-[120px] text-[30px] cursor-pointer"
             >
               TEST
+            </div>
             </div>
           </div>
           <div className="font-bold text-[30px]">
@@ -807,6 +843,7 @@ const App = () => {
               <div className="w-[110px] border border-solid border-black flex items-center justify-center"></div>
               <div className="w-[444px]"></div>
               <img
+                onClick={handleClickModal}
                 src={man}
                 className="cursor-pointer w-[133px] h-[104px] bg-gray"
                 alt="icon"
@@ -1167,7 +1204,7 @@ const App = () => {
                               handleChange(e, "a", index2);
                             }}
                             disabled={isProgress}
-                            maxLength={1}
+                            maxLength={3}
                             onFocus={() => {
                               handleInputFocus("a", index2);
                             }}
@@ -1608,7 +1645,7 @@ const App = () => {
                               handleChange(e, "c", index2);
                             }}
                             disabled={isProgress}
-                            maxLength={1}
+                            maxLength={3}
                             onFocus={() => {
                               handleInputFocus("c", index2);
                             }}
@@ -1929,7 +1966,7 @@ const App = () => {
                               handleChange(e, "d", index2);
                             }}
                             disabled={isProgress}
-                            maxLength={1}
+                            maxLength={3}
                             onFocus={() => {
                               handleInputFocus("d", index2);
                             }}
