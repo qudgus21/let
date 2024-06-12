@@ -706,7 +706,7 @@ const App = () => {
       <Gnb />
       <div className="h-[138px]"></div>
       <div className="flex gap-[83px] bg-black">
-        <Sidebar />
+        <Sidebar isShowSub={isShowSub} />
         <div className="w-fit h-full bg-black">
           <div className="font-bold text-[50px] mb-[10px] flex justify-between">
             <div className="font-poppins">
@@ -953,131 +953,131 @@ const App = () => {
                             className={`flex w-[133px] min-h-[46px] items-center justify-center text-center outline-none group-hover:bg-[#9a94ae]
                             ${
                               index2 === 0 &&
-                              currentSelect !== "a0" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a0" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 1 &&
-                              currentSelect !== "a1" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a1" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 2 &&
-                              currentSelect !== "a2" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a2" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 3 &&
-                              currentSelect !== "a3" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a3" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 4 &&
-                              currentSelect !== "a4" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a4" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 5 &&
-                              currentSelect !== "a5" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a5" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 6 &&
-                              currentSelect !== "a6" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a6" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 7 &&
-                              currentSelect !== "a7" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a7" &&
+                              "group-hover:bg-[#594c80]"
                             },
                             ${
                               index2 === 8 &&
-                              currentSelect !== "a8" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a8" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 9 &&
-                              currentSelect !== "a9" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a9" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 10 &&
-                              currentSelect !== "a10" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a10" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 11 &&
-                              currentSelect !== "a11" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a11" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
                               index2 === 12 &&
-                              currentSelect !== "a12" &&
-                              "group-hover:bg-[#9a94ae]"
+                              currentSelect === "a12" &&
+                              "group-hover:bg-[#594c80]"
                             }
                             ${
-                              index2 === 0 && sa0
+                              index2 === 0 && currentSelect === "a0"
+                                ? "bg-[#594c80]"
+                                : "bg-[#80769a]"
+                            }
+                            ${
+                              index2 === 1 && currentSelect === "a1"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 1 && sa1
+                              index2 === 2 && currentSelect === "a2"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 2 && sa2
+                              index2 === 3 && currentSelect === "a3"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 3 && sa3
+                              index2 === 4 && currentSelect === "a4"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 4 && sa4
+                              index2 === 5 && currentSelect === "a5"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 5 && sa5
+                              index2 === 6 && currentSelect === "a6"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 6 && sa6
+                              index2 === 7 && currentSelect === "a7"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 7 && sa7
+                              index2 === 8 && currentSelect === "a8"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 8 && sa8
+                              index2 === 9 && currentSelect === "a9"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 9 && sa9
+                              index2 === 10 && currentSelect === "a10"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 10 && sa10
+                              index2 === 11 && currentSelect === "a11"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }
                             ${
-                              index2 === 11 && sa11
-                                ? "!bg-[#594c80]"
-                                : "bg-[#80769a]"
-                            }
-                            ${
-                              index2 === 12 && sa12
+                              index2 === 12 && currentSelect === "a12"
                                 ? "!bg-[#594c80]"
                                 : "bg-[#80769a]"
                             }

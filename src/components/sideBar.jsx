@@ -1,8 +1,11 @@
 import side from "../assets/side.png";
 import down from "../assets/down.png";
+import sideman from "../assets/sideman.png";
+import sideblurman from "../assets/sideblurman.png";
+
 import { useState } from "react";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   const [left1, setLeft1] = useState("82");
   const [left2, setLeft2] = useState("Male");
   const [left3, setLeft3] = useState("1");
@@ -47,9 +50,17 @@ const Sidebar = () => {
       <div className="!h-[256px] flex relative mb-[33px]">
         <div className="bg-[#00FFC2] !w-[12px] !h-full"></div>
         <div className="bg-[#2f1a7a] !w-[457px] !h-full rounded-tr-[16px] rounded-br-[16px]"></div>
+        {props.isShowSub && (
+          <img
+            src={sideblurman}
+            className="cursor-pointer absolute bottom-0 w-[411px] h-[256px] left-[141px]"
+            alt="icon"
+          />
+        )}
+
         <img
-          src={side}
-          className="cursor-pointer absolute bottom-0 ml-[22px]"
+          src={sideman}
+          className="cursor-pointer absolute bottom-0 w-[407px] h-[255px]"
           alt="icon"
         />
       </div>
@@ -63,7 +74,7 @@ const Sidebar = () => {
           <div className="!w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left1}
                 onChange={(e) => {
                   setLeft1(e.target.value);
@@ -73,7 +84,7 @@ const Sidebar = () => {
             </div>
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left2}
                 onChange={(e) => {
                   setLeft2(e.target.value);
@@ -83,7 +94,7 @@ const Sidebar = () => {
             </div>
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left3}
                 onChange={(e) => {
                   setLeft3(e.target.value);
@@ -102,7 +113,7 @@ const Sidebar = () => {
           <div className="!w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left4}
                 onChange={(e) => {
                   setLeft4(e.target.value);
@@ -112,7 +123,7 @@ const Sidebar = () => {
             </div>
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left5}
                 onChange={(e) => {
                   setLeft5(e.target.value);
@@ -122,7 +133,7 @@ const Sidebar = () => {
             </div>
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left6}
                 onChange={(e) => {
                   setLeft6(e.target.value);
@@ -141,7 +152,7 @@ const Sidebar = () => {
           <div className="!w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left7}
                 onChange={(e) => {
                   setLeft7(e.target.value);
@@ -151,7 +162,7 @@ const Sidebar = () => {
             </div>
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left8}
                 onChange={(e) => {
                   setLeft8(e.target.value);
@@ -161,7 +172,7 @@ const Sidebar = () => {
             </div>
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left9}
                 onChange={(e) => {
                   setLeft9(e.target.value);
@@ -179,7 +190,7 @@ const Sidebar = () => {
           <div className="!w-[90px] border-t-[4px] border-solid border-white pt-[7px] leading-[1.4] font-bold">
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left10}
                 onChange={(e) => {
                   setLeft10(e.target.value);
@@ -189,7 +200,7 @@ const Sidebar = () => {
             </div>
             <div className="!h-[35px]">
               <input
-                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[80px] !!h-[35px]"
+                className="flex !w-[133px] items-center justify-center text-left bg-black text-white outline-none text-[25px] !w-[82px] !!h-[35px]"
                 value={left11}
                 onChange={(e) => {
                   setLeft11(e.target.value);
@@ -202,7 +213,7 @@ const Sidebar = () => {
       </div>
       <div className="pl-[54px] text-[30px] font-bold mb-[130px]">
         <div className="flex gap-[15px] mb-[30px]">
-          <div className="px-[25px] !h-[60px] bg-[#5825F5] text-white flex items-center justify-center rounded-[50px] w-[120px]">
+          <div className="px-[25px] !h-[60px] bg-[#5825F5] text-white flex items-center justify-center rounded-[50px] w-[130px]">
             <input
               className="text-white outline-none bg-[#5825F5] w-full text-center"
               value={left12}
